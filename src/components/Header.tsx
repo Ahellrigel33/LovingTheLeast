@@ -3,7 +3,11 @@
 import { useEffect, useState } from "react";
 import { Heart, BookOpen, Menu, X } from "lucide-react";
 
-export default function Header() {
+interface HeaderProps {
+  isStudyGuide?: boolean;
+}
+
+export default function Header({ isStudyGuide = false }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -26,7 +30,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed w-full z-50 transition-all duration-500 ${
+      className={`${isStudyGuide ? 'sticky top-0' : 'fixed'} w-full z-50 transition-all duration-500 ${
         isScrolled
           ? "bg-gradient-to-r from-amber-50/95 via-orange-50/95 to-rose-50/95 backdrop-blur-md shadow-lg"
           : "bg-gradient-to-r from-amber-50/90 via-white/90 to-rose-50/90 backdrop-blur-sm shadow-sm"
@@ -46,31 +50,50 @@ export default function Header() {
             
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              <button
-                onClick={() => scrollToSection("home")}
-                className="text-slate-700 hover:text-orange-600 font-medium transition-all duration-300 relative group"
-              >
-                Home
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-pink-400 transition-all duration-300 group-hover:w-full"></span>
-              </button>
-              <button
-                onClick={() => scrollToSection("about")}
-                className="text-slate-700 hover:text-orange-600 font-medium transition-all duration-300 relative group"
-              >
-                About Karol
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-pink-400 transition-all duration-300 group-hover:w-full"></span>
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="text-slate-700 hover:text-orange-600 font-medium transition-all duration-300 relative group"
-              >
-                Contact
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-pink-400 transition-all duration-300 group-hover:w-full"></span>
-              </button>
-              <button className="bg-gradient-to-r from-orange-500 to-pink-500 text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2">
-                <BookOpen className="w-4 h-4" />
-                Order Book
-              </button>
+              {!isStudyGuide ? (
+                <>
+                  <button
+                    onClick={() => scrollToSection("home")}
+                    className="text-slate-700 hover:text-orange-600 font-medium transition-all duration-300 relative group"
+                  >
+                    Home
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-pink-400 transition-all duration-300 group-hover:w-full"></span>
+                  </button>
+                  <button
+                    onClick={() => scrollToSection("about")}
+                    className="text-slate-700 hover:text-orange-600 font-medium transition-all duration-300 relative group"
+                  >
+                    About Karol
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-pink-400 transition-all duration-300 group-hover:w-full"></span>
+                  </button>
+                  <button
+                    onClick={() => scrollToSection("contact")}
+                    className="text-slate-700 hover:text-orange-600 font-medium transition-all duration-300 relative group"
+                  >
+                    Contact
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-pink-400 transition-all duration-300 group-hover:w-full"></span>
+                  </button>
+                  <button
+                    onClick={() => window.location.href = '/study-guide'}
+                    className="text-slate-700 hover:text-orange-600 font-medium transition-all duration-300 relative group"
+                  >
+                    Study Guide
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-pink-400 transition-all duration-300 group-hover:w-full"></span>
+                  </button>
+                  <button className="bg-gradient-to-r from-orange-500 to-pink-500 text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2">
+                    <BookOpen className="w-4 h-4" />
+                    Order Book
+                  </button>
+                </>
+              ) : (
+                <button 
+                  onClick={() => window.location.href = '/'}
+                  className="bg-gradient-to-r from-orange-500 to-pink-500 text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2"
+                >
+                  <BookOpen className="w-4 h-4" />
+                  Back to Home
+                </button>
+              )}
             </nav>
 
             {/* Mobile Menu Button */}
@@ -94,28 +117,46 @@ export default function Header() {
           }`}
         >
           <nav className="px-6 pb-4 space-y-2">
-            <button
-              onClick={() => scrollToSection("home")}
-              className="block w-full text-left py-2 px-4 text-slate-700 hover:text-orange-600 hover:bg-white/50 rounded-lg transition-all duration-200"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection("about")}
-              className="block w-full text-left py-2 px-4 text-slate-700 hover:text-orange-600 hover:bg-white/50 rounded-lg transition-all duration-200"
-            >
-              About Karol
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="block w-full text-left py-2 px-4 text-slate-700 hover:text-orange-600 hover:bg-white/50 rounded-lg transition-all duration-200"
-            >
-              Contact
-            </button>
-            <button className="w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 mt-3">
-              <BookOpen className="w-4 h-4" />
-              Order Book
-            </button>
+            {!isStudyGuide ? (
+              <>
+                <button
+                  onClick={() => scrollToSection("home")}
+                  className="block w-full text-left py-2 px-4 text-slate-700 hover:text-orange-600 hover:bg-white/50 rounded-lg transition-all duration-200"
+                >
+                  Home
+                </button>
+                <button
+                  onClick={() => scrollToSection("about")}
+                  className="block w-full text-left py-2 px-4 text-slate-700 hover:text-orange-600 hover:bg-white/50 rounded-lg transition-all duration-200"
+                >
+                  About Karol
+                </button>
+                <button
+                  onClick={() => scrollToSection("contact")}
+                  className="block w-full text-left py-2 px-4 text-slate-700 hover:text-orange-600 hover:bg-white/50 rounded-lg transition-all duration-200"
+                >
+                  Contact
+                </button>
+                <button
+                  onClick={() => window.location.href = '/study-guide'}
+                  className="block w-full text-left py-2 px-4 text-slate-700 hover:text-orange-600 hover:bg-white/50 rounded-lg transition-all duration-200"
+                >
+                  Study Guide
+                </button>
+                <button className="w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 mt-3">
+                  <BookOpen className="w-4 h-4" />
+                  Order Book
+                </button>
+              </>
+            ) : (
+              <button 
+                onClick={() => window.location.href = '/'}
+                className="w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+              >
+                <BookOpen className="w-4 h-4" />
+                Back to Home
+              </button>
+            )}
           </nav>
         </div>
     </header>

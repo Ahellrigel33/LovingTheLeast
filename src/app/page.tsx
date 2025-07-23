@@ -69,11 +69,20 @@ export default function Home() {
                 <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-pink-500 fill-current animate-pulse flex-shrink-0" />
               </div>
               <div className={`space-y-4 fade-in fade-in-delay-200 ${heroSection.isVisible ? 'visible' : ''} text-center lg:text-left`}>
-                <button className="btn-primary btn-gradient text-white font-semibold py-3 px-6 sm:px-8 rounded-lg text-base sm:text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 inline-flex items-center gap-2 w-full sm:w-auto justify-center">
-                  <BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />
-                  Read Our Story
-                  <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 animate-pulse" />
-                </button>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <button className="btn-primary btn-gradient text-white font-semibold py-3 px-6 sm:px-8 rounded-lg text-base sm:text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 inline-flex items-center gap-2 w-full sm:w-auto justify-center">
+                    <BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />
+                    Read Our Story
+                    <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 animate-pulse" />
+                  </button>
+                  <button 
+                    onClick={() => window.location.href = '/study-guide'}
+                    className="bg-white text-orange-600 border-2 border-orange-600 font-semibold py-3 px-6 sm:px-8 rounded-lg text-base sm:text-lg transition-all shadow-md hover:shadow-lg hover:bg-orange-50 transform hover:-translate-y-0.5 inline-flex items-center gap-2 w-full sm:w-auto justify-center"
+                  >
+                    <BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />
+                    Study Guide
+                  </button>
+                </div>
                 <p className="text-xs sm:text-sm text-slate-500 italic handwritten">Available now - A deeply moving memoir</p>
               </div>
             </div>
