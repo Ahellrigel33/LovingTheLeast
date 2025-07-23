@@ -54,7 +54,7 @@ export default function TestimonialCards({ testimonials, title = "What Readers A
                           <Star
                             key={i}
                             className={`w-4 h-4 ${
-                              i < testimonial.rating
+                              testimonial.rating !== undefined && i < testimonial.rating
                                 ? 'text-yellow-400 fill-current'
                                 : 'text-gray-300'
                             }`}
