@@ -60,12 +60,12 @@ export default function Home() {
                 We thought it would only be for a few months.
               </h1>
               <p className={`text-base sm:text-lg text-slate-600 mb-6 sm:mb-8 leading-relaxed fade-in fade-in-delay-100 text-center lg:text-left ${heroSection.isVisible ? 'visible' : ''}`}>
-                When we said "yes" to a sick baby from Haiti, holding onto the hope that it was just for a little while, our lives took a turn we never saw coming.
+                When we said &quot;yes&quot; to a sick baby from Haiti, holding onto the hope that it was just for a little while, our lives took a turn we never saw coming.
                 This is our story—the story of Moise, our son, and how a short-term commitment changed our family forever.
               </p>
               <div className={`flex items-center justify-center lg:justify-start gap-2 text-sm sm:text-base text-slate-500 mb-6 sm:mb-8 italic handwritten fade-in fade-in-delay-150 ${heroSection.isVisible ? 'visible' : ''}`}>
                 <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-pink-500 fill-current animate-pulse flex-shrink-0" />
-                <p className="text-center">A journey about what "<b>loving the least of these</b>" really means</p>
+                <p className="text-center">A journey about what &quot;<b>loving the least of these</b>&quot; really means</p>
                 <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-pink-500 fill-current animate-pulse flex-shrink-0" />
               </div>
               <div className={`space-y-4 fade-in fade-in-delay-200 ${heroSection.isVisible ? 'visible' : ''} text-center lg:text-left`}>
@@ -116,12 +116,12 @@ export default function Home() {
                 <div className="story-accent"></div>
                 <h2 className="story-title text-xl sm:text-2xl md:text-3xl font-bold">It Started with a Phone Call...</h2>
                 <p className={`story-text text-sm sm:text-base mb-4 fade-in fade-in-delay-100 ${storySection.isVisible ? 'visible' : ''}`}>
-                  It's funny the things you remember so clearly, isn't it? I can still picture myself standing in the kitchen here in East Peoria when the phone rang that day.
-                  Someone I barely knew was asking if we'd ever considered taking in a sick baby for a little while.
+                  It&apos;s funny the things you remember so clearly, isn&apos;t it? I can still picture myself standing in the kitchen here in East Peoria when the phone rang that day.
+                  Someone I barely knew was asking if we&apos;d ever considered taking in a sick baby for a little while.
                 </p>
                 <p className={`story-text text-sm sm:text-base fade-in fade-in-delay-200 ${storySection.isVisible ? 'visible' : ''}`}>
-                  "A few months? We can do that. How hard could it be?" Looking back now, I almost laugh. We were so naive.
-                  Moise wasn't just a temporary guest—he burrowed his way into our hearts and changed everything.
+                  &quot;A few months? We can do that. How hard could it be?&quot; Looking back now, I almost laugh. We were so naive.
+                  Moise wasn&apos;t just a temporary guest—he burrowed his way into our hearts and changed everything.
                 </p>
               </div>
               <div className={`text-center md:text-right fade-in fade-in-delay-300 ${storySection.isVisible ? 'visible' : ''} mt-6 md:mt-0`}>
@@ -130,9 +130,9 @@ export default function Home() {
                     <BookOpen className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
                   <h3 className="font-bold text-base sm:text-lg mb-2">Only Jesus Knows</h3>
-                  <p className="text-xs sm:text-sm mb-3 opacity-90">Loving the World's Most Vulnerable</p>
+                  <p className="text-xs sm:text-sm mb-3 opacity-90">Loving the World&apos;s Most Vulnerable</p>
                   <p className="text-xs italic opacity-80">
-                    "Throughout our years with Moise, we were left with questions that had no answers. My response was always the same: 'Only Jesus knows.'"
+                    &quot;Throughout our years with Moise, we were left with questions that had no answers. My response was always the same: &apos;Only Jesus knows.&apos;&quot;
                   </p>
                 </div>
               </div>
@@ -153,11 +153,11 @@ export default function Home() {
           <div className="relative z-10 w-full">
             <div className={`quote-card fade-in ${quoteSection.isVisible ? 'visible' : ''} max-w-3xl mx-auto`}>
               <div className="relative px-6 sm:px-8 py-8 sm:py-10">
-                <span className="quote-marks quote-mark-start text-4xl sm:text-5xl md:text-6xl">"</span>
+                <span className="quote-marks quote-mark-start text-4xl sm:text-5xl md:text-6xl">&quot;</span>
                 <blockquote className="quote-text text-lg sm:text-xl md:text-2xl lg:text-3xl leading-relaxed">
-                  I couldn't see how any of it could 'work together for good.' All I could see was my son's suffering... How many times can a human heart break and still survive? Mine broke every day.
+                  I couldn&apos;t see how any of it could &apos;work together for good.&apos; All I could see was my son&apos;s suffering... How many times can a human heart break and still survive? Mine broke every day.
                 </blockquote>
-                <span className="quote-marks quote-mark-end text-4xl sm:text-5xl md:text-6xl">"</span>
+                <span className="quote-marks quote-mark-end text-4xl sm:text-5xl md:text-6xl">&quot;</span>
               </div>
               <p className="quote-author text-sm sm:text-base md:text-lg px-6 sm:px-8 pb-6 sm:pb-8">— Karol Holmes, Only Jesus Knows</p>
             </div>
@@ -178,7 +178,7 @@ export default function Home() {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4 sm:mb-6">About Karol</h2>
               <div className="space-y-4 text-slate-600 text-sm sm:text-base">
                 <p className={`fade-in fade-in-delay-100 ${aboutSection.isVisible ? 'visible' : ''}`}>
-                  Hi, I'm Karol. I'm a wife to Jim and a mom to our wonderfully chaotic crew of six. A few years ago, I wrote
+                  Hi, I&apos;m Karol. I&apos;m a wife to Jim and a mom to our wonderfully chaotic crew of six. A few years ago, I wrote
                   <em className="text-slate-700"> Grace According to His Gifts</em> to share the beginning of our journey.
                 </p>
                 <p className={`fade-in fade-in-delay-200 ${aboutSection.isVisible ? 'visible' : ''}`}>
@@ -230,7 +230,7 @@ export default function Home() {
       >
         <div className="max-w-4xl mx-auto">
           <p className={`text-base sm:text-lg md:text-xl mb-4 sm:mb-6 italic opacity-90 fade-in ${ctaSection.isVisible ? 'visible' : ''}`}>
-            "I pray that in these pages, you'll find hope for your own journey and see how God can work in the most unexpected ways."
+            &quot;I pray that in these pages, you&apos;ll find hope for your own journey and see how God can work in the most unexpected ways.&quot;
           </p>
           <div className={`flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-xs sm:text-sm fade-in fade-in-delay-100 ${ctaSection.isVisible ? 'visible' : ''}`}>
             <span className="flex items-center gap-1">
@@ -314,7 +314,7 @@ export default function Home() {
 
               {/* Connect Section */}
               <div className="text-center md:text-left">
-                <h4 className="font-bold text-slate-800 mb-3 sm:mb-4 text-sm sm:text-base">Let's Connect</h4>
+                <h4 className="font-bold text-slate-800 mb-3 sm:mb-4 text-sm sm:text-base">Let&apos;s Connect</h4>
                 <p className="text-slate-600 text-xs sm:text-sm mb-3 sm:mb-4">
                   Follow our journey and get in touch
                 </p>

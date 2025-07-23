@@ -16,20 +16,20 @@ interface TimelineProps {
 }
 
 export default function Timeline({ events }: TimelineProps) {
+  const observer = useIntersectionObserver({ threshold: 0.3 });
+  
   return (
     <div className="timeline-container py-8">
-      <div className="relative">
+      <div className="relative" ref={observer.ref as React.RefObject<HTMLDivElement>}>
         {/* Vertical line */}
         <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-blue-200 via-purple-200 to-pink-200"></div>
         
         {events.map((event, index) => {
-          const observer = useIntersectionObserver({ threshold: 0.3 });
           const isLeft = index % 2 === 0;
           
           return (
             <div
               key={index}
-              ref={observer.ref as React.RefObject<HTMLDivElement>}
               className={`timeline-event relative flex items-center justify-center mb-12 fade-in ${
                 observer.isVisible ? 'visible' : ''
               }`}

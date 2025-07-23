@@ -17,6 +17,8 @@ interface TestimonialCardsProps {
 }
 
 export default function TestimonialCards({ testimonials, title = "What Readers Are Saying" }: TestimonialCardsProps) {
+  const observer = useIntersectionObserver({ threshold: 0.2 });
+  
   return (
     <section className="py-16 px-6 bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
       {/* Background pattern */}
@@ -31,14 +33,14 @@ export default function TestimonialCards({ testimonials, title = "What Readers A
           {title}
         </h2>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div 
+          ref={observer.ref as React.RefObject<HTMLDivElement>}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {testimonials.map((testimonial, index) => {
-            const observer = useIntersectionObserver({ threshold: 0.2 });
-            
             return (
               <div
                 key={index}
-                ref={observer.ref as React.RefObject<HTMLDivElement>}
                 className={`testimonial-card ${testimonial.highlight ? 'testimonial-highlight' : ''} fade-in fade-in-delay-${index * 100} ${
                   observer.isVisible ? 'visible' : ''
                 }`}
@@ -61,7 +63,7 @@ export default function TestimonialCards({ testimonials, title = "What Readers A
                       </div>
                     )}
                     <p className="text-slate-700 leading-relaxed italic">
-                      "{testimonial.content}"
+                      &quot;{testimonial.content}&quot;
                     </p>
                   </div>
                 </div>
