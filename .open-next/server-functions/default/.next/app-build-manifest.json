@@ -1,0 +1,35 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-3707872a274820ad.js",
+      "static/chunks/4bd1b696-1d52210eab209fad.js",
+      "static/chunks/684-d3cb274fdef12e9b.js",
+      "static/chunks/main-app-241fe1f841c62fcd.js",
+      "static/chunks/app/_not-found/page-bd4dbfa023817076.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-3707872a274820ad.js",
+      "static/chunks/4bd1b696-1d52210eab209fad.js",
+      "static/chunks/684-d3cb274fdef12e9b.js",
+      "static/chunks/main-app-241fe1f841c62fcd.js",
+      "static/css/6cb9cefe0c1e7985.css",
+      "static/css/9b911d5d1536b3ef.css",
+      "static/chunks/app/layout-33797047745fe2d9.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-3707872a274820ad.js",
+      "static/chunks/4bd1b696-1d52210eab209fad.js",
+      "static/chunks/684-d3cb274fdef12e9b.js",
+      "static/chunks/main-app-241fe1f841c62fcd.js",
+      "static/chunks/941-95362afa09285ec0.js",
+      "static/chunks/app/page-9a9329cb230b1c71.js"
+    ],
+    "/study-guide/page": [
+      "static/chunks/webpack-3707872a274820ad.js",
+      "static/chunks/4bd1b696-1d52210eab209fad.js",
+      "static/chunks/684-d3cb274fdef12e9b.js",
+      "static/chunks/main-app-241fe1f841c62fcd.js",
+      "static/chunks/app/study-guide/page-f6f6ab9b6812b93d.js"
+    ]
+  }
+}
