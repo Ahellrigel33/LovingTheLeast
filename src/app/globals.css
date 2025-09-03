@@ -1481,7 +1481,7 @@ textarea,
 }
 
 .bg-gradient-sky-gold {
-  background: linear-gradient(135deg, var(--sky-blue-dark) 0%, #f0e68c 100%);
+  background: linear-gradient(135deg, #2c5aa0 0%, #b8860b 100%);
 }
 
 .bg-gradient-sky-dove {
@@ -1490,16 +1490,16 @@ textarea,
 
 /* Updated button styles with new colors */
 .btn-primary-new {
-  background: linear-gradient(135deg, var(--sky-blue-dark) 0%, #f0e68c 100%);
+  background: linear-gradient(135deg, #2c5aa0 0%, #b8860b 100%);
   color: white;
   border: none;
   transition: all 0.3s ease;
 }
 
 .btn-primary-new:hover {
-  background: linear-gradient(135deg, #4682B4 0%, #daa520 100%);
+  background: linear-gradient(135deg, #1e3a5f 0%, #8b6914 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(70, 130, 180, 0.4);
+  box-shadow: 0 8px 25px rgba(44, 90, 160, 0.4);
 }
 
 .btn-secondary-new {

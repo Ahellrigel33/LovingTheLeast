@@ -181,7 +181,8 @@ export default function Home() {
       <section
         id="contact"
         ref={ctaSection.ref as React.RefObject<HTMLElement>}
-        className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 bg-gradient-to-r from-charcoal to-charcoal-dark text-white text-center"
+        className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 text-white text-center"
+        style={{ background: 'linear-gradient(to right, #1a202c, #2d3748)' }}
       >
         <div className="max-w-4xl mx-auto">
           <p className={`text-base sm:text-lg md:text-xl mb-4 sm:mb-6 italic fade-in ${ctaSection.isVisible ? 'visible' : ''} text-cream font-semibold`}>
