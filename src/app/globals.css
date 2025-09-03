@@ -444,8 +444,9 @@ html {
   text-align: center;
   padding: 1.5rem;
   font-style: italic;
-  color: #475569;
+  color: var(--charcoal-dark);
   font-family: 'Inter', sans-serif;
+  font-weight: 500;
 }
 
 @media (min-width: 768px) {
@@ -495,7 +496,7 @@ html {
   text-align: center;
   margin-top: 1rem;
   font-size: 0.875rem;
-  color: #f97316;
+  color: var(--gold-dark);
   font-weight: 600;
   font-family: 'Kalam', cursive;
   letter-spacing: 0.05em;
@@ -1476,7 +1477,11 @@ textarea,
 }
 
 .bg-gradient-gold-sky {
-  background: linear-gradient(135deg, var(--gold-light) 0%, var(--sky-blue) 100%);
+  background: linear-gradient(135deg, #fffacd 0%, var(--sky-blue) 100%);
+}
+
+.bg-gradient-sky-gold {
+  background: linear-gradient(135deg, var(--sky-blue) 0%, #fffacd 100%);
 }
 
 .bg-gradient-sky-dove {
@@ -1485,14 +1490,14 @@ textarea,
 
 /* Updated button styles with new colors */
 .btn-primary-new {
-  background: linear-gradient(135deg, var(--sky-blue) 0%, var(--gold) 100%);
+  background: linear-gradient(135deg, var(--sky-blue) 0%, #fffacd 100%);
   color: white;
   border: none;
   transition: all 0.3s ease;
 }
 
 .btn-primary-new:hover {
-  background: linear-gradient(135deg, var(--sky-blue-dark) 0%, var(--gold-dark) 100%);
+  background: linear-gradient(135deg, var(--sky-blue-dark) 0%, #ffeb9c 100%);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(135, 206, 235, 0.3);
 }
