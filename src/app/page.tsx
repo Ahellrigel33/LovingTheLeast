@@ -181,19 +181,19 @@ export default function Home() {
       <section
         id="contact"
         ref={ctaSection.ref as React.RefObject<HTMLElement>}
-        className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 bg-gradient-to-r from-sky-blue to-sky-blue-dark text-white text-center"
+        className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 bg-gradient-to-r from-charcoal to-charcoal-dark text-white text-center"
       >
         <div className="max-w-4xl mx-auto">
-          <p className={`text-base sm:text-lg md:text-xl mb-4 sm:mb-6 italic opacity-90 fade-in ${ctaSection.isVisible ? 'visible' : ''}`}>
+          <p className={`text-base sm:text-lg md:text-xl mb-4 sm:mb-6 italic fade-in ${ctaSection.isVisible ? 'visible' : ''} text-cream font-semibold`}>
             &quot;I pray that in these pages, you&apos;ll find hope for your own journey and see how God can work in the most unexpected ways.&quot;
           </p>
-          <div className={`flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-xs sm:text-sm fade-in fade-in-delay-100 ${ctaSection.isVisible ? 'visible' : ''}`}>
+          <div className={`flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-xs sm:text-sm fade-in fade-in-delay-100 ${ctaSection.isVisible ? 'visible' : ''} text-cream-light font-medium`}>
             <span className="flex items-center gap-1">
-              <BookOpen className="w-3 h-3 sm:w-4 sm:h-4" />
+              <BookOpen className="w-3 h-3 sm:w-4 sm:h-4 text-gold" style={{ color: 'var(--gold)' }} />
               Available Now
             </span>
             <span className="flex items-center gap-1">
-              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
+              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-gold" style={{ color: 'var(--gold)' }} />
               Inspiring True Story
             </span>
             <span className="flex items-center gap-1">
