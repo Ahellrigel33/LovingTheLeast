@@ -56,12 +56,17 @@ export default function Home() {
         <div className="hero-content max-w-6xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
             <div className={`order-2 lg:order-1 fade-in ${heroSection.isVisible ? 'visible' : ''}`}>
+              <div className={`text-center lg:text-left mb-6 sm:mb-8 fade-in ${heroSection.isVisible ? 'visible' : ''}`}>
+                <p className="text-sm sm:text-base font-semibold text-orange-600 mb-2">Matthew 25:40</p>
+                <blockquote className="text-base sm:text-lg italic text-slate-700 leading-relaxed border-l-4 border-orange-400 pl-4 mb-4">
+                  "And the King will answer and say to them, 'Assuredly, I say to you, inasmuch as you did it to one of the least of these My brethren, you did it to Me."
+                </blockquote>
+              </div>
               <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight text-center lg:text-left">
                 We thought it would only be for a few months.
               </h1>
               <p className={`text-base sm:text-lg text-slate-600 mb-6 sm:mb-8 leading-relaxed fade-in fade-in-delay-100 text-center lg:text-left ${heroSection.isVisible ? 'visible' : ''}`}>
-                When we said &quot;yes&quot; to a sick baby from Haiti, holding onto the hope that it was just for a little while, our lives took a turn we never saw coming.
-                This is our story—the story of Moise, our son, and how a short-term commitment changed our family forever.
+                Our lives were irrevocably changed when we said, "Yes" to caring for one child for a short period of time. God had a much bigger plan for us. Through the life of one beautiful boy, our eyes have been opened to the needs of the world's most vulnerable.
               </p>
               <div className={`flex items-center justify-center lg:justify-start gap-2 text-sm sm:text-base text-slate-500 mb-6 sm:mb-8 italic handwritten fade-in fade-in-delay-150 ${heroSection.isVisible ? 'visible' : ''}`}>
                 <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-pink-500 fill-current animate-pulse flex-shrink-0" />
@@ -76,11 +81,12 @@ export default function Home() {
                     <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 animate-pulse" />
                   </button>
                   <button 
-                    onClick={() => window.location.href = '/study-guide'}
-                    className="bg-white text-orange-600 border-2 border-orange-600 font-semibold py-3 px-6 sm:px-8 rounded-lg text-base sm:text-lg transition-all shadow-md hover:shadow-lg hover:bg-orange-50 transform hover:-translate-y-0.5 inline-flex items-center gap-2 w-full sm:w-auto justify-center"
+                    className="bg-white text-orange-600 border-2 border-orange-600 font-semibold py-3 px-6 sm:px-8 rounded-lg text-base sm:text-lg transition-all shadow-md hover:shadow-lg hover:bg-orange-50 transform hover:-translate-y-0.5 inline-flex items-center gap-2 w-full sm:w-auto justify-center opacity-60 cursor-not-allowed"
+                    disabled
                   >
                     <BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />
                     Study Guide
+                    <span className="bg-gradient-to-r from-orange-400 to-pink-400 text-white text-xs px-2 py-1 rounded-full font-bold ml-1">Coming Soon</span>
                   </button>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-500 italic handwritten">Available now - A deeply moving memoir</p>
@@ -88,14 +94,19 @@ export default function Home() {
             </div>
             <div className={`order-1 lg:order-2 text-center fade-in fade-in-delay-300 ${heroSection.isVisible ? 'visible' : ''} mb-6 lg:mb-0`}>
               <div className="relative inline-block book-glow">
-                <Image
-                  src="/Book Cover.png"
-                  alt="Only Jesus Knows book cover"
-                  width={240}
-                  height={320}
-                  className="rounded-xl book-shadow book-float w-48 sm:w-60 md:w-72 lg:w-80 h-auto"
-                  priority
-                />
+                <div className="relative">
+                  <Image
+                    src="/grace-according-to-gifts-cover.jpg"
+                    alt="Grace According to Gifts book cover - Book One"
+                    width={240}
+                    height={320}
+                    className="rounded-xl book-shadow book-float w-48 sm:w-60 md:w-72 lg:w-80 h-auto"
+                    priority
+                  />
+                  <div className="absolute top-2 left-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white text-xs sm:text-sm font-bold px-2 sm:px-3 py-1 rounded-full shadow-lg">
+                    Book One
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -178,7 +189,7 @@ export default function Home() {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4 sm:mb-6">About Karol</h2>
               <div className="space-y-4 text-slate-600 text-sm sm:text-base">
                 <p className={`fade-in fade-in-delay-100 ${aboutSection.isVisible ? 'visible' : ''}`}>
-                  Hi, I&apos;m Karol. I&apos;m a wife to Jim and a mom to our wonderfully chaotic crew of six. A few years ago, I wrote
+                  Hi, I&apos;m Karol. I&apos;m a wife to Jim and a mom to our wonderfully chaotic crew of seven. A few years ago, I wrote
                   <em className="text-slate-700"> Grace According to His Gifts</em> to share the beginning of our journey.
                 </p>
                 <p className={`fade-in fade-in-delay-200 ${aboutSection.isVisible ? 'visible' : ''}`}>
@@ -193,7 +204,7 @@ export default function Home() {
                     </div>
                     <div>
                       <p className="font-semibold text-slate-800 text-sm sm:text-base">Karol Holmes</p>
-                      <p className="text-xs sm:text-sm text-slate-500">Author & Mother of Six</p>
+                      <p className="text-xs sm:text-sm text-slate-500">Author & Mother of Seven</p>
                     </div>
                   </div>
                 </div>
@@ -277,7 +288,7 @@ export default function Home() {
               <div className="text-center md:text-left">
                 <h4 className="font-bold text-slate-800 mb-3 sm:mb-4 text-sm sm:text-base">About Karol</h4>
                 <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
-                  Author, mother of six, and passionate advocate for vulnerable children.
+                  Author, mother of seven, and passionate advocate for vulnerable children.
                   Sharing stories of faith, hope, and unexpected grace.
                 </p>
               </div>
@@ -293,7 +304,7 @@ export default function Home() {
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="text-slate-600 hover:text-orange-600 text-xs sm:text-sm transition-colors flex items-center justify-center md:justify-start gap-2">
+                    <a href="https://a.co/d/jldTYKX" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-orange-600 text-xs sm:text-sm transition-colors flex items-center justify-center md:justify-start gap-2">
                       <BookOpen className="w-3 h-3 sm:w-4 sm:h-4" />
                       Grace According to His Gifts
                     </a>
