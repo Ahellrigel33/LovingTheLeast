@@ -4,6 +4,7 @@ import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import Header from "@/components/Header";
 import { Heart, BookOpen, ChevronUp, ExternalLink, Clock, Users, FileText, Shield, GraduationCap, Building, Phone } from "lucide-react";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Resources() {
   // Intersection observers for fade-in animations
@@ -319,13 +320,13 @@ export default function Resources() {
               <p className="text-slate-600 mb-6 max-w-2xl mx-auto">
                 Please feel free to contact me with questions. I'm here to help you navigate these resources and find the support your family needs.
               </p>
-              <a 
-                href="mailto:karolholmesauthor@gmail.com"
+              <Link 
+                href="/contact"
                 className="btn-primary btn-gradient text-white font-semibold py-3 px-8 rounded-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 inline-flex items-center gap-2"
               >
                 <Heart className="w-5 h-5 fill-current" />
                 Contact Me
-              </a>
+              </Link>
             </div>
 
           </div>

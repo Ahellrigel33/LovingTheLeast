@@ -32,27 +32,16 @@ export default function Home() {
 
 
   return (
-    <div className="min-h-screen bg-cream-light children-drawing-pattern">
-      {/* Subtle emotional accents */}
-      <div className="heart-decoration-new" style={{ top: '20%', right: '5%' }}>
-        <Heart className="w-12 h-12 fill-current" />
-      </div>
-      <div className="heart-decoration-new" style={{ top: '60%', left: '3%' }}>
-        <Heart className="w-8 h-8 fill-current" style={{ animationDelay: '3s' }} />
-      </div>
-
+    <div className="min-h-screen bg-cream-light">
       <Header />
 
       {/* Hero Section */}
       <section
         id="home"
         ref={heroSection.ref as React.RefObject<HTMLElement>}
-        className="hero-section min-h-[calc(100vh-64px)] md:min-h-[calc(100vh-80px)] flex items-center px-4 sm:px-6 py-8 sm:py-12 bg-gradient-sky-cream relative overflow-hidden hero-texture paper-texture children-drawing-pattern"
+        className="hero-section min-h-[calc(100vh-64px)] md:min-h-[calc(100vh-80px)] flex items-center px-4 sm:px-6 py-8 sm:py-12 bg-gradient-sky-cream relative overflow-hidden"
         style={{ marginTop: '64px' }}
       >
-        {/* Warm gradient overlay */}
-        <div className="absolute inset-0 warm-gradient-new pointer-events-none"></div>
-
         <div className="hero-content max-w-6xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
             <div className={`order-2 lg:order-1 fade-in ${heroSection.isVisible ? 'visible' : ''}`}>
@@ -75,7 +64,7 @@ export default function Home() {
                   >
                     <BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />
                     Read Our Story
-                    <span className="bg-gradient-gold-sky text-white text-xs px-2 py-1 rounded-full font-bold ml-1">Coming Soon</span>
+                    <span className="badge-gradient text-white text-xs px-2 py-1 rounded-full font-bold ml-1">Coming Soon</span>
                   </button>
                 </div>
                 <p className="text-xs sm:text-sm text-charcoal-light italic handwritten">A deeply moving memoir</p>
@@ -98,12 +87,10 @@ export default function Home() {
                     className="rounded-xl book-shadow book-float w-48 sm:w-60 md:w-72 lg:w-80 h-auto"
                     priority
                   />
-                  <div className="absolute top-2 left-2 bg-gradient-gold-sky text-white text-xs sm:text-sm font-bold px-2 sm:px-3 py-1 rounded-full shadow-lg">
+                  <div className="absolute top-2 left-2 badge-gradient text-white text-xs sm:text-sm font-bold px-2 sm:px-3 py-1 rounded-full shadow-lg">
                     Book One
                   </div>
-                  <div className="absolute bottom-2 right-2 bg-sky-blue text-white text-xs font-semibold px-2 py-1 rounded-full shadow-lg opacity-90">
-                    Book Two Coming Soon!
-                  </div>
+                  {/* Removed: Book Two Coming Soon badge */}
                 </div>
               </div>
             </div>
@@ -117,7 +104,6 @@ export default function Home() {
         ref={storySection.ref as React.RefObject<HTMLElement>}
         className="story-preview px-4 sm:px-6 py-12 sm:py-16"
       >
-        <div className="story-pattern"></div>
         <div className="story-content">
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
@@ -157,7 +143,6 @@ export default function Home() {
         ref={quoteSection.ref as React.RefObject<HTMLElement>}
         className="quote-section px-4 sm:px-6 py-12 sm:py-16"
       >
-        <div className="quote-pattern"></div>
         <div className="quote-wrapper">
           <div className="relative z-10 w-full">
             <div className={`quote-card fade-in ${quoteSection.isVisible ? 'visible' : ''} max-w-3xl mx-auto`}>
@@ -182,7 +167,7 @@ export default function Home() {
         id="contact"
         ref={ctaSection.ref as React.RefObject<HTMLElement>}
         className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 text-white text-center"
-        style={{ background: 'linear-gradient(to right, #1a202c, #2d3748)' }}
+        style={{ background: 'linear-gradient(135deg, #4A90A4 0%, #6FB7D6 50%, #B8E0F5 100%)' }}
       >
         <div className="max-w-4xl mx-auto">
           <p className={`text-base sm:text-lg md:text-xl mb-4 sm:mb-6 italic fade-in ${ctaSection.isVisible ? 'visible' : ''} text-cream font-semibold`}>
@@ -246,7 +231,7 @@ export default function Home() {
                     <div className="text-charcoal text-xs sm:text-sm flex items-center justify-center md:justify-start gap-2 opacity-60">
                       <BookOpen className="w-3 h-3 sm:w-4 sm:h-4" />
                       Only Jesus Knows
-                      <span className="bg-gradient-gold-sky text-white text-xs px-2 py-1 rounded-full font-bold ml-1">Coming Soon</span>
+                      <span className="badge-gradient text-white text-xs px-2 py-1 rounded-full font-bold ml-1">Coming Soon</span>
                     </div>
                   </li>
                   <li>

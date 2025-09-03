@@ -5,6 +5,7 @@ import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import Header from "@/components/Header";
 import { Heart, BookOpen, ChevronUp, Users, Home, Sparkles } from "lucide-react";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function About() {
   // Intersection observers for fade-in animations
@@ -184,20 +185,13 @@ export default function About() {
             I'm here to listen and share in your story.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="mailto:karolholmesauthor@gmail.com"
+            <Link 
+              href="/contact"
               className="btn-primary btn-gradient text-white font-semibold py-3 px-8 rounded-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 inline-flex items-center gap-2 justify-center"
             >
               <Heart className="w-5 h-5 fill-current" />
               Get In Touch
-            </a>
-            <button 
-              onClick={() => window.location.href = '/resources'}
-              className="bg-white text-orange-600 border-2 border-orange-600 font-semibold py-3 px-8 rounded-lg transition-all shadow-md hover:shadow-lg hover:bg-orange-50 transform hover:-translate-y-0.5 inline-flex items-center gap-2 justify-center"
-            >
-              <BookOpen className="w-5 h-5" />
-              Resources
-            </button>
+            </Link>
           </div>
         </div>
       </section>

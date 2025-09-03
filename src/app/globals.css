@@ -47,6 +47,7 @@ body {
   font-family: var(--font-body), system-ui, -apple-system, sans-serif;
   font-weight: 400;
   line-height: 1.6;
+  margin: 0;
 }
 
 /* Apply serif font to all headings for a literary/book-like feel */
@@ -361,7 +362,7 @@ html {
 /* Quote Section Styles */
 .quote-section {
   position: relative;
-  background: linear-gradient(135deg, #fef3c7 0%, #fff7ed 25%, #fdf2f8 50%, #f0f9ff 75%, #fef3c7 100%);
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 25%, #f7f4e8 50%, #fdfcf8 75%, #f0f9ff 100%);
   padding: 4rem 2rem;
   overflow: hidden;
   margin: 0;
@@ -474,7 +475,7 @@ html {
 .quote-mark-start {
   top: -1rem;
   left: 1rem;
-  background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+  background: linear-gradient(135deg, #4A90A4 0%, #B8E0F5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -484,7 +485,7 @@ html {
 .quote-mark-end {
   bottom: -1rem;
   right: 1rem;
-  background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
+  background: linear-gradient(135deg, #4A90A4 0%, #B8E0F5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -505,7 +506,7 @@ html {
 /* Story Preview Section */
 .story-preview {
   position: relative;
-  background: linear-gradient(135deg, #fef3c7 0%, #fef9e7 25%, #f0f9ff 50%, #fef3c7 100%);
+  background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 25%, #fdfcf8 50%, #f7f4e8 100%);
   padding: 4rem 1.5rem;
   overflow: hidden;
 }
@@ -586,31 +587,33 @@ html {
 }
 
 .story-highlight-card {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-  color: white;
+  background: linear-gradient(135deg, rgba(184, 224, 245, 0.6) 0%, rgba(253, 252, 248, 0.95) 100%);
+  color: var(--charcoal-dark);
   padding: 1.5rem;
   border-radius: 12px;
+  border: 1px solid rgba(111, 183, 214, 0.3);
   box-shadow:
-    0 10px 15px -3px rgba(59, 130, 246, 0.3),
-    0 4px 6px -2px rgba(59, 130, 246, 0.2);
+    0 8px 12px -4px rgba(0, 0, 0, 0.08),
+    0 4px 6px -2px rgba(111, 183, 214, 0.15);
   transform: translateY(0);
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 .story-highlight-card:hover {
-  transform: translateY(-3px) scale(1.02);
+  transform: translateY(-2px);
+  border-color: rgba(111, 183, 214, 0.45);
   box-shadow:
-    0 20px 25px -5px rgba(59, 130, 246, 0.35),
-    0 10px 10px -5px rgba(59, 130, 246, 0.25);
+    0 12px 18px -6px rgba(0, 0, 0, 0.1),
+    0 6px 10px -4px rgba(111, 183, 214, 0.2);
 }
 
 .story-highlight-card h3 {
-  color: white;
+  color: var(--charcoal-dark);
   margin-bottom: 0.5rem;
 }
 
 .story-highlight-card p {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--charcoal);
   margin: 0;
 }
 
@@ -1477,29 +1480,60 @@ textarea,
 }
 
 .bg-gradient-gold-sky {
-  background: linear-gradient(135deg, #fffacd 0%, var(--sky-blue) 100%);
+  background: linear-gradient(135deg, #FFFACD 0%, #4A90A4 100%);
 }
 
 .bg-gradient-sky-gold {
-  background: linear-gradient(135deg, #2c5aa0 0%, #b8860b 100%);
+  background: linear-gradient(135deg, #4A90A4 0%, #FFFACD 100%);
 }
 
 .bg-gradient-sky-dove {
   background: linear-gradient(135deg, var(--sky-blue-light) 0%, var(--dove-gray-light) 100%);
 }
 
+/* Overrides and new utilities */
+/* Refined warm overlay without pinks */
+.warm-gradient-new {
+  background: linear-gradient(135deg,
+      rgba(184, 224, 245, 0.6) 0%,
+      rgba(191, 219, 254, 0.5) 35%,
+      rgba(247, 244, 232, 0.6) 70%,
+      rgba(253, 252, 248, 0.8) 100%);
+}
+
+/* CTA/button: darker blue to soft yellow (no gold) */
+.btn-cta {
+  background: linear-gradient(135deg, #3F8FBF 0%, #5FB0D3 60%, #FFF4A8 100%);
+  color: #ffffff;
+  border: 1px solid rgba(63, 143, 191, 0.25);
+  transition: all 0.25s ease;
+}
+
+.btn-cta:hover {
+  background: linear-gradient(135deg, #3B88B7 0%, #56A7CA 60%, #FFF19A 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(63, 143, 191, 0.28);
+}
+
+/* Badge/tag gradient with improved legibility */
+.badge-gradient {
+  background: linear-gradient(135deg, #3F8FBF 0%, #5FB0D3 80%, #FFF4A8 100%);
+  color: #ffffff;
+  border: 1px solid rgba(63, 143, 191, 0.3);
+}
+
 /* Updated button styles with new colors */
 .btn-primary-new {
-  background: linear-gradient(135deg, #2c5aa0 0%, #b8860b 100%);
+  background: linear-gradient(135deg, #4A90A4 0%, #FFFACD 100%);
   color: white;
   border: none;
   transition: all 0.3s ease;
 }
 
 .btn-primary-new:hover {
-  background: linear-gradient(135deg, #1e3a5f 0%, #8b6914 100%);
+  background: linear-gradient(135deg, #357A8A 0%, #F0E68C 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(44, 90, 160, 0.4);
+  box-shadow: 0 8px 25px rgba(74, 144, 164, 0.4);
 }
 
 .btn-secondary-new {
@@ -1523,12 +1557,4 @@ textarea,
   animation: float 6s ease-in-out infinite;
 }
 
-/* Updated warm gradient overlay */
-.warm-gradient-new {
-  background: linear-gradient(135deg,
-      rgba(247, 244, 232, 0.8) 0%,
-      rgba(184, 224, 245, 0.6) 25%,
-      rgba(211, 211, 211, 0.4) 50%,
-      rgba(135, 206, 235, 0.6) 75%,
-      rgba(218, 165, 32, 0.3) 100%);
-}
+/* (Removed duplicate warm-gradient-new override with pink/gold tones) */
