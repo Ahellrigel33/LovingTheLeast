@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import Header from "@/components/Header";
-import { Heart, BookOpen, Sparkles, ChevronUp, Mail, Facebook, Instagram, Twitter, ExternalLink } from "lucide-react";
+import { Heart, BookOpen, Sparkles, ChevronUp, Mail, Facebook, Instagram, ExternalLink } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
   const heroSection = useIntersectionObserver({ threshold: 0.1 });
   const storySection = useIntersectionObserver({ threshold: 0.2 });
   const quoteSection = useIntersectionObserver({ threshold: 0.2 });
-  const aboutSection = useIntersectionObserver({ threshold: 0.2 });
+  
   const ctaSection = useIntersectionObserver({ threshold: 0.3 });
 
   // Back to top button visibility
@@ -50,7 +50,7 @@ export default function Home() {
                 We thought it would only be for a few months.
               </h1>
               <p className={`text-base sm:text-lg text-charcoal mb-6 sm:mb-8 leading-relaxed fade-in fade-in-delay-100 text-center lg:text-left ${heroSection.isVisible ? 'visible' : ''}`}>
-                Our lives were irrevocably changed when we said, "Yes" to caring for one child for a short period of time. God had a much bigger plan for us. Through the life of one beautiful boy, our eyes have been opened to the needs of the world's most vulnerable.
+                Our lives were irrevocably changed when we said, &quot;Yes&quot; to caring for one child for a short period of time. God had a much bigger plan for us. Through the life of one beautiful boy, our eyes have been opened to the needs of the world&apos;s most vulnerable.
               </p>
               <div className={`flex items-center justify-center lg:justify-start gap-2 text-sm sm:text-base text-charcoal-light mb-6 sm:mb-8 italic handwritten fade-in fade-in-delay-150 ${heroSection.isVisible ? 'visible' : ''}`}>
                 <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-gold fill-current animate-pulse flex-shrink-0" />
@@ -73,7 +73,7 @@ export default function Home() {
               <div className={`text-center lg:text-left mt-8 sm:mt-10 fade-in fade-in-delay-250 ${heroSection.isVisible ? 'visible' : ''}`}>
                 <p className="text-sm sm:text-base font-semibold text-gold mb-2">Matthew 25:40</p>
                 <blockquote className="text-base sm:text-lg italic text-charcoal leading-relaxed border-l-4 border-gold pl-4">
-                  "And the King will answer and say to them, 'Assuredly, I say to you, inasmuch as you did it to one of the least of these My brethren, you did it to Me."
+                  &quot;And the King will answer and say to them, &apos;Assuredly, I say to you, inasmuch as you did it to one of the least of these My brethren, you did it to Me.&apos;&quot;
                 </blockquote>
               </div>
             </div>
@@ -255,10 +255,10 @@ export default function Home() {
               <div className="text-center md:text-left">
                 <h4 className="font-bold text-charcoal-dark mb-3 sm:mb-4 text-sm sm:text-base">Quick Links</h4>
                 <ul className="space-y-2">
-                  <li><a href="/" className="text-charcoal hover:text-sky-blue-dark text-xs sm:text-sm transition-colors">Home</a></li>
-                  <li><a href="/about" className="text-charcoal hover:text-sky-blue-dark text-xs sm:text-sm transition-colors">About</a></li>
-                  <li><a href="/resources" className="text-charcoal hover:text-sky-blue-dark text-xs sm:text-sm transition-colors">Resources</a></li>
-                  <li><a href="/contact" className="text-charcoal hover:text-sky-blue-dark text-xs sm:text-sm transition-colors">Contact</a></li>
+                  <li><Link href="/" className="text-charcoal hover:text-sky-blue-dark text-xs sm:text-sm transition-colors">Home</Link></li>
+                  <li><Link href="/about" className="text-charcoal hover:text-sky-blue-dark text-xs sm:text-sm transition-colors">About</Link></li>
+                  <li><Link href="/resources" className="text-charcoal hover:text-sky-blue-dark text-xs sm:text-sm transition-colors">Resources</Link></li>
+                  <li><Link href="/contact" className="text-charcoal hover:text-sky-blue-dark text-xs sm:text-sm transition-colors">Contact</Link></li>
                 </ul>
               </div>
 
@@ -269,21 +269,21 @@ export default function Home() {
                   Follow our journey and get in touch
                 </p>
                 <div className="space-y-3">
-                  <a
+                  <Link
                     href="/contact"
                     className="text-charcoal hover:text-sky-blue-dark text-xs sm:text-sm transition-colors flex items-center justify-center md:justify-start gap-2 group break-all"
                   >
                     <Mail className="w-3 h-3 sm:w-4 sm:h-4 group-hover:scale-110 transition-transform flex-shrink-0" />
                     <span className="break-all">Get In Touch</span>
-                  </a>
+                  </Link>
                   <div className="flex gap-2 sm:gap-3 justify-center md:justify-start mt-3 sm:mt-4">
-                    <a
+                    <Link
                       href="/contact"
                       className="w-8 h-8 sm:w-10 sm:h-10 bg-cream/70 backdrop-blur-sm rounded-full flex items-center justify-center text-charcoal hover:bg-gold hover:text-white transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg group"
                       aria-label="Contact Me"
                     >
                       <Mail className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
-                    </a>
+                    </Link>
                     <a
                       href="#"
                       className="w-8 h-8 sm:w-10 sm:h-10 bg-cream/70 backdrop-blur-sm rounded-full flex items-center justify-center text-charcoal hover:bg-sky-blue hover:text-white transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg group"

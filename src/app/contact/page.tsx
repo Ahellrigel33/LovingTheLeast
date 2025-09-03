@@ -74,7 +74,7 @@ ${formData.message}
         subject: '',
         message: ''
       });
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -111,8 +111,8 @@ ${formData.message}
               Contact Me
             </h1>
             <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              I'd love to hear from you. Whether you're walking a similar journey, have questions about resources, 
-              or simply want to connect, I'm here to listen and share in your story.
+              I&apos;d love to hear from you. Whether you&apos;re walking a similar journey, have questions about resources, 
+              or simply want to connect, I&apos;m here to listen and share in your story.
             </p>
           </div>
         </div>
@@ -140,7 +140,7 @@ ${formData.message}
                     <Heart className="w-5 h-5 text-green-600 fill-current" />
                     <p className="text-green-700 font-medium">
                       Thank you for reaching out! Your default email client should have opened with your message. 
-                      If it didn't, you can email me directly at karolholmesauthor@gmail.com
+                      If it didn&apos;t, you can email me directly at karolholmesauthor@gmail.com
                     </p>
                   </div>
                 </div>
@@ -267,7 +267,7 @@ ${formData.message}
       {/* Additional Info Section */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 bg-gradient-to-r from-orange-50 to-pink-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl sm:text-3xl font-bold text-slate-800 mb-4">I'm Here to Walk With You</h3>
+          <h3 className="text-2xl sm:text-3xl font-bold text-slate-800 mb-4">I&apos;m Here to Walk With You</h3>
           <p className="text-base sm:text-lg text-slate-600 mb-8 leading-relaxed">
             If you are bearing the heavy load of grief, loss, or parenting children with special needs, 
             it is my prayer that I can walk with you on your journey. Every story matters, and I believe 
@@ -279,7 +279,7 @@ ${formData.message}
               <BookOpen className="w-8 h-8 text-orange-600 mx-auto mb-3" />
               <h4 className="font-bold text-slate-800 mb-2">Resources & Support</h4>
               <p className="text-sm text-slate-600">
-                Questions about navigating services for special needs? I'm here to help guide you.
+                Questions about navigating services for special needs? I&apos;m here to help guide you.
               </p>
             </div>
             
@@ -287,7 +287,7 @@ ${formData.message}
               <Heart className="w-8 h-8 text-pink-500 fill-current mx-auto mb-3" />
               <h4 className="font-bold text-slate-800 mb-2">Shared Journey</h4>
               <p className="text-sm text-slate-600">
-                Walking a similar path? Let's connect and encourage each other along the way.
+                Walking a similar path? Let&apos;s connect and encourage each other along the way.
               </p>
             </div>
           </div>

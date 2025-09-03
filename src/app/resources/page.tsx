@@ -2,7 +2,7 @@
 
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import Header from "@/components/Header";
-import { Heart, BookOpen, ChevronUp, ExternalLink, Clock, Users, FileText, Shield, GraduationCap, Building, Phone } from "lucide-react";
+import { Heart, BookOpen, ChevronUp, ExternalLink, Clock, Users, FileText, Shield, GraduationCap, Phone } from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -60,7 +60,7 @@ export default function Resources() {
             </h1>
             <p className="text-lg sm:text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
               If you have a child with intellectual and/or developmental disabilities (IDD), it can be overwhelming to know where to turn for help and support.
-              I'm here to help. Below are resources specifically for those residing in Illinois, but every state has resources; we just need to figure out how to access them.
+              I&apos;m here to help. Below are resources specifically for those residing in Illinois, but every state has resources; we just need to figure out how to access them.
             </p>
           </div>
         </div>
@@ -75,7 +75,7 @@ export default function Resources() {
           <div className={`text-center mb-12 fade-in ${timelineSection.isVisible ? 'visible' : ''}`}>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4">Timeline of Important Steps</h2>
             <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto">
-              Below is a timeline of important steps to take as your child grows to adulthood, followed by helpful resources to guide you throughout your child's life.
+              Below is a timeline of important steps to take as your child grows to adulthood, followed by helpful resources to guide you throughout your child&apos;s life.
             </p>
           </div>
 
@@ -97,8 +97,8 @@ export default function Resources() {
                   </div>
                   <h3 className="text-lg font-bold text-slate-800 mb-2">Early Intervention</h3>
                   <p className="text-slate-600 text-sm sm:text-base">
-                    If you have questions or concerns about your child's development, speak to your child's physician.
-                    Ask him/her to make a referral for an EI assessment.
+                    If you have questions or concerns about your child&apos;s development, speak to your child&apos;s physician.
+                    Ask him&apos;her to make a referral for an EI assessment.
                   </p>
                 </div>
               </div>
@@ -115,7 +115,7 @@ export default function Resources() {
                   <h3 className="text-lg font-bold text-slate-800 mb-2">Early Childhood Education</h3>
                   <p className="text-slate-600 text-sm sm:text-base">
                     If your child is in EI, they will transition to ECE. If they are not in EI but you have concerns,
-                    contact your child's physician. You can also reach out to your local school district for an ECE screening.
+                    contact your child&apos;s physician. You can also reach out to your local school district for an ECE screening.
                   </p>
                 </div>
               </div>
@@ -166,8 +166,8 @@ export default function Resources() {
                   <h3 className="text-lg font-bold text-slate-800 mb-2">Legal Guardianship</h3>
                   <p className="text-slate-600 text-sm sm:text-base">
                     After your child turns seventeen years old, you will need to begin taking steps to obtain legal guardianship of them.
-                    It is vitally important that you be appointed as your child's legal guardian on or soon after their eighteenth birthday.
-                    Legal guardianship is necessary for you to have legal authority to speak to your child's physicians or make medical decisions. Contact a guardianship attorney in your area.
+                    It is vitally important that you be appointed as your child&apos;s legal guardian on or soon after their eighteenth birthday.
+                    Legal guardianship is necessary for you to have legal authority to speak to your child&apos;s physicians or make medical decisions. Contact a guardianship attorney in your area.
                   </p>
                 </div>
               </div>
@@ -189,7 +189,7 @@ export default function Resources() {
               <h3 className="text-lg font-bold text-slate-800 mb-3">Legal Will</h3>
               <p className="text-slate-600 text-sm sm:text-base">
                 As with any child, a Legal Will and Trust should be set up at birth. A Legal Will allows you to appoint someone
-                you trust to act as your child's guardian in the unfortunate event of your death or if you are otherwise incapacitated.
+                you trust to act as your child&apos;s guardian in the unfortunate event of your death or if you are otherwise incapacitated.
               </p>
             </div>
 
@@ -201,7 +201,7 @@ export default function Resources() {
               <p className="text-slate-600 text-sm sm:text-base">
                 A special needs trust can be set up at the same time as your legal will. Once your child is eligible for Supplemental Security Income or disability,
                 they are allowed no more than two thousand dollars in their name to obtain SSI. Any assets left in their name could jeopardize their eligibility.
-                A special needs trust allows a certain percentage of your assets to be set aside for your child's use and managed by a designated adult.
+                A special needs trust allows a certain percentage of your assets to be set aside for your child&apos;s use and managed by a designated adult.
               </p>
             </div>
           </div>
@@ -447,7 +447,7 @@ export default function Resources() {
                   <h3 className="text-lg font-bold text-slate-800 mb-2">Illinois Association of Rehabilitation Facilities</h3>
                   <p className="text-slate-600 text-sm sm:text-base mb-3">
                     The voice of human service organizations in government. They have worked to provide agencies with individual consultation on issues that affect them specifically.
-                    IARF also commits itself to developing programs that return members' investment of their dues. Their purpose is "To assist in the development and improvement of services in Illinois."
+                    IARF also commits itself to developing programs that return members&apos; investment of their dues. Their purpose is &quot;To assist in the development and improvement of services in Illinois.&quot;
                   </p>
                   <a
                     href="https://www.iarf.org/"
@@ -505,7 +505,7 @@ export default function Resources() {
                 <div className="flex-grow">
                   <h3 className="text-lg font-bold text-slate-800 mb-2">Illinois Department of Human Services - Division of Early Childhood</h3>
                   <p className="text-slate-600 text-sm sm:text-base mb-3">
-                    Helps strengthen and centralize the state's existing childcare, home visiting, and early intervention programs, as well as operationalize and create administrative capacity to establish sustainable infrastructure needs in order to streamline services.
+                    Helps strengthen and centralize the state&apos;s existing childcare, home visiting, and early intervention programs, as well as operationalize and create administrative capacity to establish sustainable infrastructure needs in order to streamline services.
                     Working hand-in-hand with local communities throughout Illinois, the Division of Early Childhood provides low-income, working families with access to quality, affordable childcare; administers community-based prevention and intervention programs; and helps all children between the ages of birth to three with disabilities or delays to learn and grow.
                   </p>
                   <a
@@ -615,7 +615,7 @@ export default function Resources() {
               </div>
               <h3 className="text-xl font-bold text-slate-800 mb-4">Need Help Finding Resources?</h3>
               <p className="text-slate-600 mb-6 max-w-2xl mx-auto">
-                Please feel free to contact me with questions. I'm here to help you navigate these resources and find the support your family needs.
+                Please feel free to contact me with questions. I&apos;m here to help you navigate these resources and find the support your family needs.
               </p>
               <Link
                 href="/contact"

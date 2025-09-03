@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
+
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import Header from "@/components/Header";
-import { Heart, BookOpen, ChevronUp, Users, Home, Sparkles } from "lucide-react";
+import { Heart, ChevronUp, Users, Home, Sparkles } from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
@@ -59,7 +59,7 @@ export default function About() {
               About Karol
             </h1>
             <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Wife to Jim, mother of seven amazing children, and passionate advocate for the world's most vulnerable
+              Wife to Jim, mother of seven amazing children, and passionate advocate for the world&apos;s most vulnerable
             </p>
           </div>
         </div>
@@ -71,7 +71,7 @@ export default function About() {
           <div className={`fade-in ${heroSection.isVisible ? 'visible' : ''}`}>
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl border border-sky-blue/20">
               <blockquote className="text-lg sm:text-xl md:text-2xl font-medium text-charcoal-dark leading-relaxed italic mb-4">
-                "Once our eyes are opened we cannot pretend we do not know what to do. God, who weighs our hearts and keeps our souls knows we know and holds us responsible to act."
+                &quot;Once our eyes are opened we cannot pretend we do not know what to do. God, who weighs our hearts and keeps our souls knows we know and holds us responsible to act.&quot;
               </blockquote>
               <cite className="text-base sm:text-lg font-semibold text-gold-dark not-italic">
                 Proverbs 24:12
@@ -113,21 +113,21 @@ export default function About() {
 
               <div className="prose prose-lg max-w-none text-slate-600 space-y-6">
                 <p className="text-base sm:text-lg leading-relaxed">
-                  I'm so glad you stopped by. I am already praying for you. Isn't it amazing how, when we pray for someone, we grow to love them? 
+                  I&apos;m so glad you stopped by. I am already praying for you. Isn&apos;t it amazing how, when we pray for someone, we grow to love them? 
                   The moment I wrote the first word of my first book, <em>Grace According to Gifts</em>, I began praying for anyone who would read. 
                   Now I pray for anyone who reads my story or visits me on social media, or here on my website. 
                   I want you to feel welcome and loved by me and by Almighty God.
                 </p>
 
                 <p className="text-base sm:text-lg leading-relaxed">
-                  I'm Karol ~ My priorities are, first and foremost, a Child of God. Next, I am wife to my amazing husband, Jim. 
+                  I&apos;m Karol ~ My priorities are, first and foremost, a Child of God. Next, I am wife to my amazing husband, Jim. 
                   Then I am mother to seven amazing children. Finally, I am a writer who is passionate about grief, loss, and parenting 
                   children and adults with intellectual and developmental disabilities. I believe firmly in keeping priorities and praying for them in this order.
                 </p>
 
                 <p className="text-base sm:text-lg leading-relaxed">
                   Right out of high school, I earned a degree in Clinical Laboratory Science where I learned to analyze blood and body fluids 
-                  for diagnostic purposes. I worked for thirty years in the medical field. I used to have a bit of a "save the world" mentality. 
+                  for diagnostic purposes. I worked for thirty years in the medical field. I used to have a bit of a &quot;save the world&quot; mentality. 
                   I wanted to be a missionary in a third-world country. Instead, God brought my mission to me and placed it in my arms.
                 </p>
 
@@ -135,7 +135,7 @@ export default function About() {
                   Jim and I were content with what we considered to be the perfect-sized family after our fourth child was born. 
                   God had a different plan. He brought a tiny baby boy from Haiti who needed someone to care for him. 
                   This child changed the trajectory of our lives as we were thrust into the world of developmental disabilities and medical complexities. 
-                  Our eyes were opened to a desperate need. We couldn't pretend we did not know. Later, we adopted two more children with significant needs. 
+                  Our eyes were opened to a desperate need. We couldn&apos;t pretend we did not know. Later, we adopted two more children with significant needs. 
                   Two of our children are now in heaven.
                 </p>
 
@@ -146,7 +146,7 @@ export default function About() {
 
                 <div className="bg-gradient-to-r from-orange-50 to-pink-50 p-6 rounded-lg border-l-4 border-orange-400 my-8">
                   <p className="text-base sm:text-lg leading-relaxed italic text-slate-700 font-medium">
-                    We are called to care for "the least of these," those who are poor, vulnerable, and marginalized. 
+                    We are called to care for &quot;the least of these,&quot; those who are poor, vulnerable, and marginalized. 
                     Is there anyone more vulnerable than those who are dependent on others for their most basic needs?
                   </p>
                 </div>
@@ -210,8 +210,8 @@ export default function About() {
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-2xl sm:text-3xl font-bold text-slate-800 mb-4">Connect With Me</h3>
           <p className="text-base sm:text-lg text-slate-600 mb-8">
-            I'd love to hear from you. Whether you're walking a similar journey or simply want to connect, 
-            I'm here to listen and share in your story.
+            I&apos;d love to hear from you. Whether you&apos;re walking a similar journey or simply want to connect, 
+            I&apos;m here to listen and share in your story.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
