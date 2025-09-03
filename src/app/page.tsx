@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import Header from "@/components/Header";
-import { Heart, BookOpen, Sparkles, ChevronUp, Mail, Facebook, Instagram, Twitter } from "lucide-react";
+import { Heart, BookOpen, Sparkles, ChevronUp, Mail, Facebook, Instagram, Twitter, ExternalLink } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function Home() {
@@ -87,9 +88,16 @@ export default function Home() {
                     className="rounded-xl book-shadow book-float w-48 sm:w-60 md:w-72 lg:w-80 h-auto"
                     priority
                   />
-                  <div className="absolute top-2 left-2 badge-gradient text-white text-xs sm:text-sm font-bold px-2 sm:px-3 py-1 rounded-full shadow-lg">
-                    Book One
-                  </div>
+                  <Link
+                    href="https://a.co/d/jldTYKX"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute top-2 left-2 badge-gradient text-white text-xs sm:text-sm font-bold px-2 sm:px-3 py-1 rounded-full shadow-lg inline-flex items-center gap-1 sm:gap-1.5 hover:opacity-95 transition-opacity"
+                    aria-label="View Book One on Amazon"
+                  >
+                    <span>Book One</span>
+                    <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
+                  </Link>
                   {/* Removed: Book Two Coming Soon badge */}
                 </div>
               </div>

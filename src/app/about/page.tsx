@@ -65,6 +65,35 @@ export default function About() {
         </div>
       </section>
 
+      {/* Scripture Opening */}
+      <section className="py-8 sm:py-12 px-4 sm:px-6 bg-gradient-to-br from-sky-blue-light to-cream relative overflow-hidden">
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <div className={`fade-in ${heroSection.isVisible ? 'visible' : ''}`}>
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-xl border border-sky-blue/20">
+              <blockquote className="text-lg sm:text-xl md:text-2xl font-medium text-charcoal-dark leading-relaxed italic mb-4">
+                "Once our eyes are opened we cannot pretend we do not know what to do. God, who weighs our hearts and keeps our souls knows we know and holds us responsible to act."
+              </blockquote>
+              <cite className="text-base sm:text-lg font-semibold text-gold-dark not-italic">
+                Proverbs 24:12
+              </cite>
+            </div>
+          </div>
+        </div>
+        {/* Decorative pattern overlay */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `repeating-radial-gradient(
+              circle at 20% 30%,
+              transparent 0,
+              transparent 40px,
+              var(--sky-blue, rgba(135, 206, 235, 0.1)) 40px,
+              var(--sky-blue, rgba(135, 206, 235, 0.1)) 80px
+            )`,
+            backgroundSize: '160px 160px'
+          }}></div>
+        </div>
+      </section>
+
       {/* Welcome Letter Section */}
       <section
         ref={welcomeSection.ref as React.RefObject<HTMLElement>}
