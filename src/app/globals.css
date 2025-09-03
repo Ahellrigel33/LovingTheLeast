@@ -9,6 +9,22 @@
   --font-heading: var(--font-playfair-display);
   --font-body: var(--font-inter);
   --font-handwritten: 'Kalam', cursive;
+
+  /* New Color Palette */
+  --sky-blue: #87CEEB;
+  --sky-blue-light: #B8E0F5;
+  --sky-blue-dark: #6FB7D6;
+  --cream: #F7F4E8;
+  --cream-light: #FDFCF8;
+  --dove-gray: #D3D3D3;
+  --dove-gray-light: #E8E8E8;
+  --dove-gray-dark: #B8B8B8;
+  --charcoal: #36454F;
+  --charcoal-light: #4A5A64;
+  --charcoal-dark: #2C3E50;
+  --gold: #DAA520;
+  --gold-light: #F4D03F;
+  --gold-dark: #B8860B;
 }
 
 @theme inline {
@@ -1429,4 +1445,85 @@ textarea,
 
 .question-card {
   @apply bg-white rounded-lg p-4 sm:p-6 shadow-md hover:shadow-lg transition-shadow duration-300 border-l-4 border-orange-400;
+}
+
+/* New Color Palette Utility Classes */
+.bg-sky-blue { background-color: var(--sky-blue); }
+.bg-sky-blue-light { background-color: var(--sky-blue-light); }
+.bg-sky-blue-dark { background-color: var(--sky-blue-dark); }
+.bg-cream { background-color: var(--cream); }
+.bg-cream-light { background-color: var(--cream-light); }
+.bg-dove-gray { background-color: var(--dove-gray); }
+.bg-dove-gray-light { background-color: var(--dove-gray-light); }
+.bg-dove-gray-dark { background-color: var(--dove-gray-dark); }
+.text-charcoal { color: var(--charcoal); }
+.text-charcoal-light { color: var(--charcoal-light); }
+.text-charcoal-dark { color: var(--charcoal-dark); }
+.text-gold { color: var(--gold); }
+.text-gold-light { color: var(--gold-light); }
+.text-gold-dark { color: var(--gold-dark); }
+.border-gold { border-color: var(--gold); }
+.border-sky-blue { border-color: var(--sky-blue); }
+.border-dove-gray { border-color: var(--dove-gray); }
+
+/* Updated gradient combinations */
+.bg-gradient-sky-cream {
+  background: linear-gradient(135deg, var(--sky-blue-light) 0%, var(--cream) 100%);
+}
+
+.bg-gradient-cream-sky {
+  background: linear-gradient(135deg, var(--cream) 0%, var(--sky-blue-light) 100%);
+}
+
+.bg-gradient-gold-sky {
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--sky-blue) 100%);
+}
+
+.bg-gradient-sky-dove {
+  background: linear-gradient(135deg, var(--sky-blue-light) 0%, var(--dove-gray-light) 100%);
+}
+
+/* Updated button styles with new colors */
+.btn-primary-new {
+  background: linear-gradient(135deg, var(--sky-blue) 0%, var(--gold) 100%);
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary-new:hover {
+  background: linear-gradient(135deg, var(--sky-blue-dark) 0%, var(--gold-dark) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(135, 206, 235, 0.3);
+}
+
+.btn-secondary-new {
+  background: var(--cream);
+  color: var(--charcoal);
+  border: 2px solid var(--sky-blue);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary-new:hover {
+  background: var(--sky-blue-light);
+  color: var(--charcoal-dark);
+  border-color: var(--sky-blue-dark);
+}
+
+/* Updated heart decoration with new colors */
+.heart-decoration-new {
+  position: absolute;
+  color: var(--gold);
+  opacity: 0.2;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Updated warm gradient overlay */
+.warm-gradient-new {
+  background: linear-gradient(135deg,
+      rgba(247, 244, 232, 0.8) 0%,
+      rgba(184, 224, 245, 0.6) 25%,
+      rgba(211, 211, 211, 0.4) 50%,
+      rgba(135, 206, 235, 0.6) 75%,
+      rgba(218, 165, 32, 0.3) 100%);
 }

@@ -32,18 +32,18 @@ export default function Header({ isStudyGuide = false }: HeaderProps) {
     <header
       className={`${isStudyGuide ? 'sticky top-0' : 'fixed'} w-full z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-gradient-to-r from-amber-50/95 via-orange-50/95 to-rose-50/95 backdrop-blur-md shadow-lg"
-          : "bg-gradient-to-r from-amber-50/90 via-white/90 to-rose-50/90 backdrop-blur-sm shadow-sm"
+          ? "bg-cream/95 backdrop-blur-md shadow-lg border-b border-dove-gray/30"
+          : "bg-cream-light/90 backdrop-blur-sm shadow-sm border-b border-dove-gray/20"
       }`}
     >
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <BookOpen className="w-6 h-6 text-orange-600" />
-                <Heart className="w-3 h-3 text-pink-500 fill-current absolute -top-1 -right-1 animate-heartbeat" />
+                <BookOpen className="w-6 h-6 text-sky-blue-dark" style={{ color: 'var(--sky-blue-dark)' }} />
+                <Heart className="w-3 h-3 text-gold fill-current absolute -top-1 -right-1 animate-heartbeat" style={{ color: 'var(--gold)' }} />
               </div>
-              <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
+              <h1 className="text-xl md:text-2xl font-bold text-charcoal-dark" style={{ color: 'var(--charcoal-dark)' }}>
                 Only Jesus Knows
               </h1>
             </div>
@@ -54,66 +54,66 @@ export default function Header({ isStudyGuide = false }: HeaderProps) {
                 <>
                   <button
                     onClick={() => window.location.href = '/'}
-                    className="text-slate-700 hover:text-orange-600 font-medium transition-all duration-300 relative group"
+                    className="text-charcoal hover:text-sky-blue-dark font-medium transition-all duration-300 relative group"
                   >
                     Home
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-pink-400 transition-all duration-300 group-hover:w-full"></span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full" style={{ backgroundColor: 'var(--gold)' }}></span>
                   </button>
                   <button
                     onClick={() => window.location.href = '/about'}
-                    className="text-slate-700 hover:text-orange-600 font-medium transition-all duration-300 relative group"
+                    className="text-charcoal hover:text-sky-blue-dark font-medium transition-all duration-300 relative group"
                   >
                     About
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-pink-400 transition-all duration-300 group-hover:w-full"></span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full" style={{ backgroundColor: 'var(--gold)' }}></span>
                   </button>
                   <button
                     onClick={() => window.location.href = '/resources'}
-                    className="text-slate-700 hover:text-orange-600 font-medium transition-all duration-300 relative group"
+                    className="text-charcoal hover:text-sky-blue-dark font-medium transition-all duration-300 relative group"
                   >
                     Resources
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-pink-400 transition-all duration-300 group-hover:w-full"></span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full" style={{ backgroundColor: 'var(--gold)' }}></span>
                   </button>
                   <button
                     onClick={() => window.location.href = '/contact'}
-                    className="text-slate-700 hover:text-orange-600 font-medium transition-all duration-300 relative group"
+                    className="text-charcoal hover:text-sky-blue-dark font-medium transition-all duration-300 relative group"
                   >
                     Contact
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-400 to-pink-400 transition-all duration-300 group-hover:w-full"></span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full" style={{ backgroundColor: 'var(--gold)' }}></span>
                   </button>
                   <div className="relative group">
                     <button
-                      className="text-slate-700 hover:text-orange-600 font-medium transition-all duration-300 relative group flex items-center gap-2 opacity-50 cursor-not-allowed"
+                      className="text-charcoal hover:text-sky-blue-dark font-medium transition-all duration-300 relative group flex items-center gap-2 opacity-50 cursor-not-allowed"
                       disabled
                     >
                       Study Guide
-                      <span className="bg-gradient-to-r from-orange-400 to-pink-400 text-white text-xs px-2 py-1 rounded-full font-bold">Coming Soon</span>
+                      <span className="bg-gradient-gold-sky text-white text-xs px-2 py-1 rounded-full font-bold">Coming Soon</span>
                     </button>
                   </div>
-                  <button className="bg-gradient-to-r from-orange-500 to-pink-500 text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2">
+                  <button className="btn-primary-new text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2">
                     <BookOpen className="w-4 h-4" />
                     Order Book
                   </button>
                 </>
               ) : (
-                <button 
-                  onClick={() => window.location.href = '/'}
-                  className="bg-gradient-to-r from-orange-500 to-pink-500 text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2"
-                >
-                  <BookOpen className="w-4 h-4" />
-                  Back to Home
-                </button>
+              <button 
+                onClick={() => window.location.href = '/'}
+                className="btn-primary-new text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2"
+              >
+                <BookOpen className="w-4 h-4" />
+                Back to Home
+              </button>
               )}
             </nav>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-white/50 transition-colors"
+              className="md:hidden p-2 rounded-lg hover:bg-cream/50 transition-colors"
             >
               {isMobileMenuOpen ? (
-                <X className="w-6 h-6 text-slate-700" />
+                <X className="w-6 h-6 text-charcoal" />
               ) : (
-                <Menu className="w-6 h-6 text-slate-700" />
+                <Menu className="w-6 h-6 text-charcoal" />
               )}
             </button>
           </div>
@@ -130,33 +130,33 @@ export default function Header({ isStudyGuide = false }: HeaderProps) {
               <>
                 <button
                   onClick={() => {window.location.href = '/'; setIsMobileMenuOpen(false);}}
-                  className="block w-full text-left py-2 px-4 text-slate-700 hover:text-orange-600 hover:bg-white/50 rounded-lg transition-all duration-200"
+                  className="block w-full text-left py-2 px-4 text-charcoal hover:text-sky-blue-dark hover:bg-cream-light/50 rounded-lg transition-all duration-200"
                 >
                   Home
                 </button>
                 <button
                   onClick={() => {window.location.href = '/about'; setIsMobileMenuOpen(false);}}
-                  className="block w-full text-left py-2 px-4 text-slate-700 hover:text-orange-600 hover:bg-white/50 rounded-lg transition-all duration-200"
+                  className="block w-full text-left py-2 px-4 text-charcoal hover:text-sky-blue-dark hover:bg-cream-light/50 rounded-lg transition-all duration-200"
                 >
                   About
                 </button>
                 <button
                   onClick={() => {window.location.href = '/resources'; setIsMobileMenuOpen(false);}}
-                  className="block w-full text-left py-2 px-4 text-slate-700 hover:text-orange-600 hover:bg-white/50 rounded-lg transition-all duration-200"
+                  className="block w-full text-left py-2 px-4 text-charcoal hover:text-sky-blue-dark hover:bg-cream-light/50 rounded-lg transition-all duration-200"
                 >
                   Resources
                 </button>
                 <button
                   onClick={() => {window.location.href = '/contact'; setIsMobileMenuOpen(false);}}
-                  className="block w-full text-left py-2 px-4 text-slate-700 hover:text-orange-600 hover:bg-white/50 rounded-lg transition-all duration-200"
+                  className="block w-full text-left py-2 px-4 text-charcoal hover:text-sky-blue-dark hover:bg-cream-light/50 rounded-lg transition-all duration-200"
                 >
                   Contact
                 </button>
-                <div className="py-2 px-4 text-slate-500 rounded-lg flex items-center justify-between opacity-50">
+                <div className="py-2 px-4 text-dove-gray rounded-lg flex items-center justify-between opacity-50">
                   <span>Study Guide</span>
-                  <span className="bg-gradient-to-r from-orange-400 to-pink-400 text-white text-xs px-2 py-1 rounded-full font-bold">Coming Soon</span>
+                  <span className="bg-gradient-gold-sky text-white text-xs px-2 py-1 rounded-full font-bold">Coming Soon</span>
                 </div>
-                <button className="w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 mt-3">
+                <button className="w-full btn-primary-new text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 mt-3">
                   <BookOpen className="w-4 h-4" />
                   Order Book
                 </button>
@@ -164,7 +164,7 @@ export default function Header({ isStudyGuide = false }: HeaderProps) {
             ) : (
               <button 
                 onClick={() => window.location.href = '/'}
-                className="w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+                className="w-full btn-primary-new text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <BookOpen className="w-4 h-4" />
                 Back to Home
