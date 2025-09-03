@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import Header from "@/components/Header";
-import { Heart, BookOpen, Sparkles, ChevronUp, Mail, Facebook, Instagram, Twitter } from "lucide-react";
+import { Heart, BookOpen, Sparkles, ChevronUp, Mail, Facebook, Instagram, ExternalLink } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function Home() {
@@ -11,7 +12,7 @@ export default function Home() {
   const heroSection = useIntersectionObserver({ threshold: 0.1 });
   const storySection = useIntersectionObserver({ threshold: 0.2 });
   const quoteSection = useIntersectionObserver({ threshold: 0.2 });
-  const aboutSection = useIntersectionObserver({ threshold: 0.2 });
+  
   const ctaSection = useIntersectionObserver({ threshold: 0.3 });
 
   // Back to top button visibility
@@ -32,70 +33,73 @@ export default function Home() {
 
 
   return (
-    <div className="min-h-screen bg-white children-drawing-pattern">
-      {/* Subtle emotional accents */}
-      <div className="heart-decoration" style={{ top: '20%', right: '5%' }}>
-        <Heart className="w-12 h-12 fill-current" />
-      </div>
-      <div className="heart-decoration" style={{ top: '60%', left: '3%' }}>
-        <Heart className="w-8 h-8 fill-current" style={{ animationDelay: '3s' }} />
-      </div>
-
+    <div className="min-h-screen bg-cream-light">
       <Header />
 
       {/* Hero Section */}
       <section
         id="home"
         ref={heroSection.ref as React.RefObject<HTMLElement>}
-        className="hero-section min-h-[calc(100vh-64px)] md:min-h-[calc(100vh-80px)] flex items-center px-4 sm:px-6 py-8 sm:py-12 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden hero-texture paper-texture children-drawing-pattern"
+        className="hero-section min-h-[calc(100vh-64px)] md:min-h-[calc(100vh-80px)] flex items-center px-4 sm:px-6 py-8 sm:py-12 bg-gradient-sky-cream relative overflow-hidden"
         style={{ marginTop: '64px' }}
       >
-        {/* Warm gradient overlay */}
-        <div className="absolute inset-0 warm-gradient pointer-events-none"></div>
-
         <div className="hero-content max-w-6xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
             <div className={`order-2 lg:order-1 fade-in ${heroSection.isVisible ? 'visible' : ''}`}>
-              <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight text-center lg:text-left">
+              <h1 className="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-charcoal-dark mb-4 sm:mb-6 leading-tight text-center lg:text-left">
                 We thought it would only be for a few months.
               </h1>
-              <p className={`text-base sm:text-lg text-slate-600 mb-6 sm:mb-8 leading-relaxed fade-in fade-in-delay-100 text-center lg:text-left ${heroSection.isVisible ? 'visible' : ''}`}>
-                When we said &quot;yes&quot; to a sick baby from Haiti, holding onto the hope that it was just for a little while, our lives took a turn we never saw coming.
-                This is our story—the story of Moise, our son, and how a short-term commitment changed our family forever.
+              <p className={`text-base sm:text-lg text-charcoal mb-6 sm:mb-8 leading-relaxed fade-in fade-in-delay-100 text-center lg:text-left ${heroSection.isVisible ? 'visible' : ''}`}>
+                Our lives were irrevocably changed when we said, &quot;Yes&quot; to caring for one child for a short period of time. God had a much bigger plan for us. Through the life of one beautiful boy, our eyes have been opened to the needs of the world&apos;s most vulnerable.
               </p>
-              <div className={`flex items-center justify-center lg:justify-start gap-2 text-sm sm:text-base text-slate-500 mb-6 sm:mb-8 italic handwritten fade-in fade-in-delay-150 ${heroSection.isVisible ? 'visible' : ''}`}>
-                <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-pink-500 fill-current animate-pulse flex-shrink-0" />
+              <div className={`flex items-center justify-center lg:justify-start gap-2 text-sm sm:text-base text-charcoal-light mb-6 sm:mb-8 italic handwritten fade-in fade-in-delay-150 ${heroSection.isVisible ? 'visible' : ''}`}>
+                <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-gold fill-current animate-pulse flex-shrink-0" />
                 <p className="text-center">A journey about what &quot;<b>loving the least of these</b>&quot; really means</p>
-                <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-pink-500 fill-current animate-pulse flex-shrink-0" />
+                <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-gold fill-current animate-pulse flex-shrink-0" />
               </div>
               <div className={`space-y-4 fade-in fade-in-delay-200 ${heroSection.isVisible ? 'visible' : ''} text-center lg:text-left`}>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <button className="btn-primary btn-gradient text-white font-semibold py-3 px-6 sm:px-8 rounded-lg text-base sm:text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 inline-flex items-center gap-2 w-full sm:w-auto justify-center">
-                    <BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />
-                    Read Our Story
-                    <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 animate-pulse" />
-                  </button>
                   <button 
-                    onClick={() => window.location.href = '/study-guide'}
-                    className="bg-white text-orange-600 border-2 border-orange-600 font-semibold py-3 px-6 sm:px-8 rounded-lg text-base sm:text-lg transition-all shadow-md hover:shadow-lg hover:bg-orange-50 transform hover:-translate-y-0.5 inline-flex items-center gap-2 w-full sm:w-auto justify-center"
+                    className="btn-secondary-new font-semibold py-3 px-6 sm:px-8 rounded-lg text-base sm:text-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 inline-flex items-center gap-2 w-full sm:w-auto justify-center opacity-60 cursor-not-allowed"
+                    disabled
                   >
                     <BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />
-                    Study Guide
+                    Read Our Story
+                    <span className="badge-gradient text-white text-xs px-2 py-1 rounded-full font-bold ml-1">Coming Soon</span>
                   </button>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-500 italic handwritten">Available now - A deeply moving memoir</p>
+                <p className="text-xs sm:text-sm text-charcoal-light italic handwritten">A deeply moving memoir</p>
+              </div>
+              <div className={`text-center lg:text-left mt-8 sm:mt-10 fade-in fade-in-delay-250 ${heroSection.isVisible ? 'visible' : ''}`}>
+                <p className="text-sm sm:text-base font-semibold text-gold mb-2">Matthew 25:40</p>
+                <blockquote className="text-base sm:text-lg italic text-charcoal leading-relaxed border-l-4 border-gold pl-4">
+                  &quot;And the King will answer and say to them, &apos;Assuredly, I say to you, inasmuch as you did it to one of the least of these My brethren, you did it to Me.&apos;&quot;
+                </blockquote>
               </div>
             </div>
             <div className={`order-1 lg:order-2 text-center fade-in fade-in-delay-300 ${heroSection.isVisible ? 'visible' : ''} mb-6 lg:mb-0`}>
               <div className="relative inline-block book-glow">
-                <Image
-                  src="/Book Cover.png"
-                  alt="Only Jesus Knows book cover"
-                  width={240}
-                  height={320}
-                  className="rounded-xl book-shadow book-float w-48 sm:w-60 md:w-72 lg:w-80 h-auto"
-                  priority
-                />
+                <div className="relative">
+                  <Image
+                    src="/grace-according-to-gifts-cover.jpg"
+                    alt="Grace According to Gifts book cover - Book One"
+                    width={240}
+                    height={320}
+                    className="rounded-xl book-shadow book-float w-48 sm:w-60 md:w-72 lg:w-80 h-auto"
+                    priority
+                  />
+                  <Link
+                    href="https://a.co/d/jldTYKX"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute top-2 left-2 badge-gradient text-white text-xs sm:text-sm font-bold px-2 sm:px-3 py-1 rounded-full shadow-lg inline-flex items-center gap-1 sm:gap-1.5 hover:opacity-95 transition-opacity"
+                    aria-label="View Book One on Amazon"
+                  >
+                    <span>Book One</span>
+                    <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4" />
+                  </Link>
+                  {/* Removed: Book Two Coming Soon badge */}
+                </div>
               </div>
             </div>
           </div>
@@ -108,7 +112,6 @@ export default function Home() {
         ref={storySection.ref as React.RefObject<HTMLElement>}
         className="story-preview px-4 sm:px-6 py-12 sm:py-16"
       >
-        <div className="story-pattern"></div>
         <div className="story-content">
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
@@ -148,7 +151,6 @@ export default function Home() {
         ref={quoteSection.ref as React.RefObject<HTMLElement>}
         className="quote-section px-4 sm:px-6 py-12 sm:py-16"
       >
-        <div className="quote-pattern"></div>
         <div className="quote-wrapper">
           <div className="relative z-10 w-full">
             <div className={`quote-card fade-in ${quoteSection.isVisible ? 'visible' : ''} max-w-3xl mx-auto`}>
@@ -166,83 +168,30 @@ export default function Home() {
       </section>
 
 
-      {/* About & Book Info */}
-      <section
-        id="about"
-        ref={aboutSection.ref as React.RefObject<HTMLElement>}
-        className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 bg-gradient-to-r from-slate-50 to-blue-50 flow-connector"
-      >
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-            <div className={`fade-in ${aboutSection.isVisible ? 'visible' : ''}`}>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4 sm:mb-6">About Karol</h2>
-              <div className="space-y-4 text-slate-600 text-sm sm:text-base">
-                <p className={`fade-in fade-in-delay-100 ${aboutSection.isVisible ? 'visible' : ''}`}>
-                  Hi, I&apos;m Karol. I&apos;m a wife to Jim and a mom to our wonderfully chaotic crew of six. A few years ago, I wrote
-                  <em className="text-slate-700"> Grace According to His Gifts</em> to share the beginning of our journey.
-                </p>
-                <p className={`fade-in fade-in-delay-200 ${aboutSection.isVisible ? 'visible' : ''}`}>
-                  But as our life with Moise continued, I knew there was a deeper, harder, and more beautiful story to tell.
-                  <strong className="text-slate-700"> Only Jesus Knows</strong> is that story—my attempt to be honest about the struggles
-                  and point to the goodness of God who carried us through it all.
-                </p>
-                <div className={`pt-4 fade-in fade-in-delay-300 ${aboutSection.isVisible ? 'visible' : ''}`}>
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-pink-100 to-purple-100 rounded-full flex items-center justify-center">
-                      <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-pink-500 fill-current" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-slate-800 text-sm sm:text-base">Karol Holmes</p>
-                      <p className="text-xs sm:text-sm text-slate-500">Author & Mother of Six</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={`text-center fade-in fade-in-delay-200 ${aboutSection.isVisible ? 'visible' : ''} mt-8 lg:mt-0`}>
-              <div className="bg-white p-6 sm:p-8 rounded-xl shadow-xl transform hover:scale-105 transition-transform">
-                <Image
-                  src="/Book Cover.png"
-                  alt="Only Jesus Knows book cover"
-                  width={240}
-                  height={320}
-                  className="mx-auto rounded-lg shadow-lg mb-4 sm:mb-6 w-48 sm:w-60 h-auto"
-                />
-                <h3 className="text-lg sm:text-xl font-bold text-slate-800 mb-2">Only Jesus Knows</h3>
-                <p className="text-sm sm:text-base text-slate-600 mb-4 sm:mb-6">A story of unexpected love, profound loss, and unwavering faith</p>
-                <button className="btn-primary btn-gradient w-full text-white font-semibold py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg transition-all flex items-center justify-center gap-2 text-sm sm:text-base">
-                  <BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />
-                  Order Your Copy Today
-                  <Heart className="w-3 h-3 sm:w-4 sm:h-4 fill-current animate-heartbeat" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
 
       {/* Final CTA */}
       <section
         id="contact"
         ref={ctaSection.ref as React.RefObject<HTMLElement>}
-        className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 bg-blue-600 text-white text-center"
+        className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 text-white text-center"
+        style={{ background: 'linear-gradient(135deg, #4A90A4 0%, #6FB7D6 50%, #B8E0F5 100%)' }}
       >
         <div className="max-w-4xl mx-auto">
-          <p className={`text-base sm:text-lg md:text-xl mb-4 sm:mb-6 italic opacity-90 fade-in ${ctaSection.isVisible ? 'visible' : ''}`}>
+          <p className={`text-base sm:text-lg md:text-xl mb-4 sm:mb-6 italic fade-in ${ctaSection.isVisible ? 'visible' : ''} text-cream font-semibold`}>
             &quot;I pray that in these pages, you&apos;ll find hope for your own journey and see how God can work in the most unexpected ways.&quot;
           </p>
-          <div className={`flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-xs sm:text-sm fade-in fade-in-delay-100 ${ctaSection.isVisible ? 'visible' : ''}`}>
+          <div className={`flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-xs sm:text-sm fade-in fade-in-delay-100 ${ctaSection.isVisible ? 'visible' : ''} text-cream-light font-medium`}>
             <span className="flex items-center gap-1">
-              <BookOpen className="w-3 h-3 sm:w-4 sm:h-4" />
+              <BookOpen className="w-3 h-3 sm:w-4 sm:h-4 text-gold" style={{ color: 'var(--gold)' }} />
               Available Now
             </span>
             <span className="flex items-center gap-1">
-              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4" />
+              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-gold" style={{ color: 'var(--gold)' }} />
               Inspiring True Story
             </span>
             <span className="flex items-center gap-1">
-              <Heart className="w-3 h-3 sm:w-4 sm:h-4 fill-current" />
+              <Heart className="w-3 h-3 sm:w-4 sm:h-4 fill-current text-gold" style={{ color: 'var(--gold)' }} />
               Perfect for Gift Giving
             </span>
           </div>
@@ -253,7 +202,7 @@ export default function Home() {
       {/* Footer with warmer design */}
       <footer className="relative overflow-hidden">
         {/* Warm gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-cream via-sky-blue-light to-cream-light"></div>
 
         {/* Decorative pattern overlay */}
         <div className="absolute inset-0 opacity-10">
@@ -262,8 +211,8 @@ export default function Home() {
               circle at 0% 0%,
               transparent 0,
               transparent 40px,
-              rgba(251, 146, 60, 0.1) 40px,
-              rgba(251, 146, 60, 0.1) 80px
+              var(--gold-light, rgba(218, 165, 32, 0.1)) 40px,
+              var(--gold-light, rgba(218, 165, 32, 0.1)) 80px
             )`,
             backgroundSize: '160px 160px'
           }}></div>
@@ -275,25 +224,26 @@ export default function Home() {
             <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12">
               {/* About Section */}
               <div className="text-center md:text-left">
-                <h4 className="font-bold text-slate-800 mb-3 sm:mb-4 text-sm sm:text-base">About Karol</h4>
-                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
-                  Author, mother of six, and passionate advocate for vulnerable children.
+                <h4 className="font-bold text-charcoal-dark mb-3 sm:mb-4 text-sm sm:text-base">About Karol</h4>
+                <p className="text-charcoal text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
+                  Author, mother of seven, and passionate advocate for vulnerable children.
                   Sharing stories of faith, hope, and unexpected grace.
                 </p>
               </div>
 
               {/* Books Section */}
               <div className="text-center md:text-left">
-                <h4 className="font-bold text-slate-800 mb-3 sm:mb-4 text-sm sm:text-base">My Books</h4>
+                <h4 className="font-bold text-charcoal-dark mb-3 sm:mb-4 text-sm sm:text-base">My Books</h4>
                 <ul className="space-y-2">
                   <li>
-                    <a href="#" className="text-slate-600 hover:text-orange-600 text-xs sm:text-sm transition-colors flex items-center justify-center md:justify-start gap-2">
+                    <div className="text-charcoal text-xs sm:text-sm flex items-center justify-center md:justify-start gap-2 opacity-60">
                       <BookOpen className="w-3 h-3 sm:w-4 sm:h-4" />
                       Only Jesus Knows
-                    </a>
+                      <span className="badge-gradient text-white text-xs px-2 py-1 rounded-full font-bold ml-1">Coming Soon</span>
+                    </div>
                   </li>
                   <li>
-                    <a href="#" className="text-slate-600 hover:text-orange-600 text-xs sm:text-sm transition-colors flex items-center justify-center md:justify-start gap-2">
+                    <a href="https://a.co/d/jldTYKX" target="_blank" rel="noopener noreferrer" className="text-charcoal hover:text-sky-blue-dark text-xs sm:text-sm transition-colors flex items-center justify-center md:justify-start gap-2">
                       <BookOpen className="w-3 h-3 sm:w-4 sm:h-4" />
                       Grace According to His Gifts
                     </a>
@@ -303,57 +253,50 @@ export default function Home() {
 
               {/* Quick Links */}
               <div className="text-center md:text-left">
-                <h4 className="font-bold text-slate-800 mb-3 sm:mb-4 text-sm sm:text-base">Quick Links</h4>
+                <h4 className="font-bold text-charcoal-dark mb-3 sm:mb-4 text-sm sm:text-base">Quick Links</h4>
                 <ul className="space-y-2">
-                  <li><a href="#home" className="text-slate-600 hover:text-orange-600 text-xs sm:text-sm transition-colors">Home</a></li>
-                  <li><a href="#about" className="text-slate-600 hover:text-orange-600 text-xs sm:text-sm transition-colors">About</a></li>
-                  <li><a href="#testimonials" className="text-slate-600 hover:text-orange-600 text-xs sm:text-sm transition-colors">Testimonials</a></li>
-                  <li><a href="#contact" className="text-slate-600 hover:text-orange-600 text-xs sm:text-sm transition-colors">Contact</a></li>
+                  <li><Link href="/" className="text-charcoal hover:text-sky-blue-dark text-xs sm:text-sm transition-colors">Home</Link></li>
+                  <li><Link href="/about" className="text-charcoal hover:text-sky-blue-dark text-xs sm:text-sm transition-colors">About</Link></li>
+                  <li><Link href="/resources" className="text-charcoal hover:text-sky-blue-dark text-xs sm:text-sm transition-colors">Resources</Link></li>
+                  <li><Link href="/contact" className="text-charcoal hover:text-sky-blue-dark text-xs sm:text-sm transition-colors">Contact</Link></li>
                 </ul>
               </div>
 
               {/* Connect Section */}
               <div className="text-center md:text-left">
-                <h4 className="font-bold text-slate-800 mb-3 sm:mb-4 text-sm sm:text-base">Let&apos;s Connect</h4>
-                <p className="text-slate-600 text-xs sm:text-sm mb-3 sm:mb-4">
+                <h4 className="font-bold text-charcoal-dark mb-3 sm:mb-4 text-sm sm:text-base">Let&apos;s Connect</h4>
+                <p className="text-charcoal text-xs sm:text-sm mb-3 sm:mb-4">
                   Follow our journey and get in touch
                 </p>
                 <div className="space-y-3">
-                  <a
-                    href="mailto:karol@lovingtheleast.com"
-                    className="text-slate-600 hover:text-orange-600 text-xs sm:text-sm transition-colors flex items-center justify-center md:justify-start gap-2 group break-all"
+                  <Link
+                    href="/contact"
+                    className="text-charcoal hover:text-sky-blue-dark text-xs sm:text-sm transition-colors flex items-center justify-center md:justify-start gap-2 group break-all"
                   >
                     <Mail className="w-3 h-3 sm:w-4 sm:h-4 group-hover:scale-110 transition-transform flex-shrink-0" />
-                    <span className="break-all">karol@lovingtheleast.com</span>
-                  </a>
+                    <span className="break-all">Get In Touch</span>
+                  </Link>
                   <div className="flex gap-2 sm:gap-3 justify-center md:justify-start mt-3 sm:mt-4">
-                    <a
-                      href="mailto:karol@lovingtheleast.com"
-                      className="w-8 h-8 sm:w-10 sm:h-10 bg-white/70 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-600 hover:bg-orange-600 hover:text-white transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg group"
-                      aria-label="Email"
+                    <Link
+                      href="/contact"
+                      className="w-8 h-8 sm:w-10 sm:h-10 bg-cream/70 backdrop-blur-sm rounded-full flex items-center justify-center text-charcoal hover:bg-gold hover:text-white transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg group"
+                      aria-label="Contact Me"
                     >
                       <Mail className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
-                    </a>
+                    </Link>
                     <a
                       href="#"
-                      className="w-8 h-8 sm:w-10 sm:h-10 bg-white/70 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-600 hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg group"
+                      className="w-8 h-8 sm:w-10 sm:h-10 bg-cream/70 backdrop-blur-sm rounded-full flex items-center justify-center text-charcoal hover:bg-sky-blue hover:text-white transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg group"
                       aria-label="Facebook"
                     >
                       <Facebook className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
                     </a>
                     <a
                       href="#"
-                      className="w-8 h-8 sm:w-10 sm:h-10 bg-white/70 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-600 hover:bg-pink-600 hover:text-white transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg group"
+                      className="w-8 h-8 sm:w-10 sm:h-10 bg-cream/70 backdrop-blur-sm rounded-full flex items-center justify-center text-charcoal hover:bg-gold hover:text-white transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg group"
                       aria-label="Instagram"
                     >
                       <Instagram className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
-                    </a>
-                    <a
-                      href="#"
-                      className="w-8 h-8 sm:w-10 sm:h-10 bg-white/70 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-600 hover:bg-sky-500 hover:text-white transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg group"
-                      aria-label="Twitter"
-                    >
-                      <Twitter className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
                     </a>
                   </div>
                 </div>
@@ -361,10 +304,10 @@ export default function Home() {
             </div>
 
             {/* Copyright Section */}
-            <div className="border-t border-orange-200 pt-6 sm:pt-8">
+            <div className="border-t border-dove-gray/30 pt-6 sm:pt-8">
               <div className="text-center">
-                <p className="text-slate-600 text-xs sm:text-sm">
-                  © 2025 Karol Holmes. All rights reserved. Made with <Heart className="inline-block w-3 h-3 sm:w-4 sm:h-4 text-pink-500 fill-current" /> and faith.
+                <p className="text-charcoal text-xs sm:text-sm">
+                  © 2025 Karol Holmes. All rights reserved. Made with <Heart className="inline-block w-3 h-3 sm:w-4 sm:h-4 text-gold fill-current" style={{ color: 'var(--gold)' }} /> and faith.
                 </p>
               </div>
             </div>
@@ -375,7 +318,7 @@ export default function Home() {
       {/* Back to Top Button */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-6 right-6 w-12 h-12 bg-gradient-to-br from-orange-500 to-pink-500 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-xl z-50 ${showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
+        className={`fixed bottom-6 right-6 w-12 h-12 bg-gradient-sky-gold text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-xl z-50 ${showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
           }`}
         aria-label="Back to top"
       >
