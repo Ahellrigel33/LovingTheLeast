@@ -3,9 +3,11 @@
 
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { Heart, ChevronUp, Users, Home, Sparkles } from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function About() {
   // Intersection observers for fade-in animations
@@ -171,7 +173,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Family Photo Section - Placeholder for future images */}
+      {/* Family Photo Section */}
       <section
         ref={familySection.ref as React.RefObject<HTMLElement>}
         className="py-12 sm:py-16 px-4 sm:px-6"
@@ -180,26 +182,115 @@ export default function About() {
           <div className={`text-center mb-12 fade-in ${familySection.isVisible ? 'visible' : ''}`}>
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4">Our Family</h3>
             <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto">
-              Family photos will be added soon, including pictures of our beautiful family and special moments with Moise and Kruz together.
+              A glimpse into the beautiful family God has blessed us with, including our precious moments with Moise and Kruz.
             </p>
           </div>
           
-          <div className={`grid md:grid-cols-2 gap-8 fade-in fade-in-delay-200 ${familySection.isVisible ? 'visible' : ''}`}>
-            {/* Placeholder cards for future family photos */}
-            <div className="bg-gradient-to-br from-slate-100 to-blue-100 rounded-2xl p-8 text-center shadow-lg">
-              <div className="w-24 h-24 bg-gradient-to-br from-orange-200 to-pink-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <Users className="w-12 h-12 text-orange-600" />
+          {/* Family Photos Grid */}
+          <div className="grid gap-8 mb-12">
+            {/* Large family photo */}
+            <div className={`fade-in ${familySection.isVisible ? 'visible' : ''}`}>
+              <div className="bg-white rounded-2xl p-6 shadow-xl">
+                <div className="relative aspect-video rounded-xl overflow-hidden mb-4">
+                  <Image
+                    src="/holmes-full-family.jpg"
+                    alt="The complete Holmes family - Jim, Karol, and all seven children together"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1000px"
+                  />
+                </div>
+                <div className="text-center">
+                  <h4 className="text-xl font-bold text-slate-800 mb-2">The Holmes Family</h4>
+                  <p className="text-slate-600">Jim, Karol, and all seven of our amazing children</p>
+                </div>
               </div>
-              <h4 className="text-lg font-bold text-slate-800 mb-2">Family Photo</h4>
-              <p className="text-sm text-slate-600">Coming Soon</p>
             </div>
 
-            <div className="bg-gradient-to-br from-slate-100 to-blue-100 rounded-2xl p-8 text-center shadow-lg">
-              <div className="w-24 h-24 bg-gradient-to-br from-orange-200 to-pink-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <Heart className="w-12 h-12 text-pink-500 fill-current" />
+            {/* Immediate family and Moise & Kruz photos */}
+            <div className={`grid md:grid-cols-2 gap-8 fade-in fade-in-delay-200 ${familySection.isVisible ? 'visible' : ''}`}>
+              <div className="bg-white rounded-2xl p-6 shadow-xl">
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden mb-4">
+                  <Image
+                    src="/holmes-immediate-family.jpg"
+                    alt="Jim, Karol, and their immediate family"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+                  />
+                </div>
+                <div className="text-center">
+                  <h4 className="text-lg font-bold text-slate-800 mb-2">Immediate Family</h4>
+                  <p className="text-slate-600">Jim, Karol, and their children</p>
+                </div>
               </div>
-              <h4 className="text-lg font-bold text-slate-800 mb-2">Moise & Kruz</h4>
-              <p className="text-sm text-slate-600">Coming Soon</p>
+
+              <div className="bg-white rounded-2xl p-6 shadow-xl">
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden mb-4">
+                  <Image
+                    src="/moise-on-swing.JPG"
+                    alt="Moise enjoying time on a swing"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+                  />
+                </div>
+                <div className="text-center">
+                  <h4 className="text-lg font-bold text-slate-800 mb-2">Moise</h4>
+                  <p className="text-slate-600">Our precious son enjoying simple pleasures</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Moise and Kruz together photos */}
+            <div className={`grid sm:grid-cols-2 lg:grid-cols-3 gap-6 fade-in fade-in-delay-300 ${familySection.isVisible ? 'visible' : ''}`}>
+              <div className="bg-white rounded-2xl p-4 shadow-xl">
+                <div className="relative aspect-square rounded-xl overflow-hidden mb-3">
+                  <Image
+                    src="/moise-and-kruz-driveway.JPG"
+                    alt="Moise and Kruz together in the driveway"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 300px"
+                  />
+                </div>
+                <div className="text-center">
+                  <h5 className="font-semibold text-slate-800 mb-1">Moise & Kruz</h5>
+                  <p className="text-sm text-slate-600">Brothers in the driveway</p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-4 shadow-xl">
+                <div className="relative aspect-square rounded-xl overflow-hidden mb-3">
+                  <Image
+                    src="/moise-and-kruz-park.JPEG"
+                    alt="Moise and Kruz having fun at the park"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 300px"
+                  />
+                </div>
+                <div className="text-center">
+                  <h5 className="font-semibold text-slate-800 mb-1">Park Adventures</h5>
+                  <p className="text-sm text-slate-600">Creating memories together</p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-4 shadow-xl">
+                <div className="relative aspect-square rounded-xl overflow-hidden mb-3">
+                  <Image
+                    src="/moise-and-kruz-store.JPEG"
+                    alt="Moise and Kruz during a store visit"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 300px"
+                  />
+                </div>
+                <div className="text-center">
+                  <h5 className="font-semibold text-slate-800 mb-1">Everyday Moments</h5>
+                  <p className="text-sm text-slate-600">Simple joys together</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -235,6 +326,8 @@ export default function About() {
       >
         <ChevronUp className="w-6 h-6" />
       </button>
+      
+      <Footer />
     </div>
   );
 }

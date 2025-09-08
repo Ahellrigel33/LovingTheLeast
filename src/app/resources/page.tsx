@@ -2,6 +2,7 @@
 
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { Heart, BookOpen, ChevronUp, ExternalLink, Clock, Users, FileText, Shield, GraduationCap, Phone } from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -639,6 +640,8 @@ export default function Resources() {
       >
         <ChevronUp className="w-6 h-6" />
       </button>
+      
+      <Footer />
     </div>
   );
 }

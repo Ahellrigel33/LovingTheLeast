@@ -4,7 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import Header from "@/components/Header";
-import { Heart, BookOpen, Sparkles, ChevronUp, Mail, Facebook, Instagram, ExternalLink } from "lucide-react";
+import Footer from "@/components/Footer";
+import BookSummaryModal from "@/components/BookSummaryModal";
+import { Heart, BookOpen, Sparkles, ChevronUp, Mail, Instagram, ExternalLink } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function Home() {
@@ -17,6 +19,9 @@ export default function Home() {
 
   // Back to top button visibility
   const [showBackToTop, setShowBackToTop] = useState(false);
+  
+  // Book summary modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,15 +38,15 @@ export default function Home() {
 
 
   return (
-    <div className="min-h-screen bg-cream-light">
+    <div className="min-h-screen bg-gradient-sky-cream">
       <Header />
 
       {/* Hero Section */}
       <section
         id="home"
         ref={heroSection.ref as React.RefObject<HTMLElement>}
-        className="hero-section min-h-[calc(100vh-64px)] md:min-h-[calc(100vh-80px)] flex items-center px-4 sm:px-6 py-8 sm:py-12 bg-gradient-sky-cream relative overflow-hidden"
-        style={{ marginTop: '64px' }}
+        className="hero-section min-h-screen flex items-center px-4 sm:px-6 py-8 sm:py-12 bg-gradient-sky-cream relative overflow-hidden"
+        style={{ paddingTop: '80px' }}
       >
         <div className="hero-content max-w-6xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
@@ -54,7 +59,7 @@ export default function Home() {
               </p>
               <div className={`flex items-center justify-center lg:justify-start gap-2 text-sm sm:text-base text-charcoal-light mb-6 sm:mb-8 italic handwritten fade-in fade-in-delay-150 ${heroSection.isVisible ? 'visible' : ''}`}>
                 <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-gold fill-current animate-pulse flex-shrink-0" />
-                <p className="text-center">A journey about what &quot;<b>loving the least of these</b>&quot; really means</p>
+                <p className="text-center">A journey of loving one of <b>&quot;the least of these&quot;</b></p>
                 <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-gold fill-current animate-pulse flex-shrink-0" />
               </div>
               <div className={`space-y-4 fade-in fade-in-delay-200 ${heroSection.isVisible ? 'visible' : ''} text-center lg:text-left`}>
@@ -113,30 +118,54 @@ export default function Home() {
         className="story-preview px-4 sm:px-6 py-12 sm:py-16"
       >
         <div className="story-content">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
-              <div className={`md:col-span-2 story-card fade-in ${storySection.isVisible ? 'visible' : ''}`}>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
+              <div className={`lg:col-span-2 story-card fade-in ${storySection.isVisible ? 'visible' : ''}`}>
                 <div className="story-accent"></div>
-                <h2 className="story-title text-xl sm:text-2xl md:text-3xl font-bold">It Started with a Phone Call...</h2>
+                <h2 className="story-title text-xl sm:text-2xl md:text-3xl font-bold italic text-charcoal-dark mb-4">"Love in action is a harsh and dreadful thing." <span className="text-base font-medium not-italic">~Fyodor Dostoevsky</span></h2>
                 <p className={`story-text text-sm sm:text-base mb-4 fade-in fade-in-delay-100 ${storySection.isVisible ? 'visible' : ''}`}>
-                  It&apos;s funny the things you remember so clearly, isn&apos;t it? I can still picture myself standing in the kitchen here in East Peoria when the phone rang that day.
-                  Someone I barely knew was asking if we&apos;d ever considered taking in a sick baby for a little while.
+                  Nearly every community has families and caregivers desperately in need of help with their dearly loved children with intellectual and developmental disabilities. Yet many people do not even know that this need exists.
                 </p>
                 <p className={`story-text text-sm sm:text-base fade-in fade-in-delay-200 ${storySection.isVisible ? 'visible' : ''}`}>
-                  &quot;A few months? We can do that. How hard could it be?&quot; Looking back now, I almost laugh. We were so naive.
-                  Moise wasn&apos;t just a temporary guest—he burrowed his way into our hearts and changed everything.
+                  Churches are oblivious to the fact that there are hurting, lonely families right in their backyard.
                 </p>
               </div>
-              <div className={`text-center md:text-right fade-in fade-in-delay-300 ${storySection.isVisible ? 'visible' : ''} mt-6 md:mt-0`}>
-                <div className="story-highlight-card">
-                  <div className="flex items-center justify-center gap-2 mb-3">
-                    <BookOpen className="w-5 h-5 sm:w-6 sm:h-6" />
+              
+              <div className="lg:col-span-1 space-y-6">
+                {/* Book One - Grace According to Gifts */}
+                <div className={`text-center fade-in fade-in-delay-300 ${storySection.isVisible ? 'visible' : ''}`}>
+                  <div className="story-highlight-card relative">
+                    <div className="absolute top-2 right-2 bg-sky-blue text-white text-xs font-bold px-2 py-1 rounded-full">Book One</div>
+                    <div className="flex items-center justify-center gap-2 mb-3">
+                      <BookOpen className="w-5 h-5 sm:w-6 sm:h-6" />
+                    </div>
+                    <h3 className="font-bold text-base sm:text-lg mb-2">Grace According to Gifts</h3>
+                    <p className="text-xs sm:text-sm mb-3 opacity-90">Available Now</p>
+                    <p className="text-xs italic opacity-80 mb-4">
+                      The first book in Karol's journey of loving the least of these.
+                    </p>
+                    <button 
+                      onClick={() => setIsModalOpen(true)}
+                      className="bg-sky-blue hover:bg-sky-blue-dark text-white text-sm font-semibold py-2 px-4 rounded-lg transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5"
+                    >
+                      Read Summary
+                    </button>
                   </div>
-                  <h3 className="font-bold text-base sm:text-lg mb-2">Only Jesus Knows</h3>
-                  <p className="text-xs sm:text-sm mb-3 opacity-90">Loving the World&apos;s Most Vulnerable</p>
-                  <p className="text-xs italic opacity-80">
-                    &quot;Throughout our years with Moise, we were left with questions that had no answers. My response was always the same: &apos;Only Jesus knows.&apos;&quot;
-                  </p>
+                </div>
+
+                {/* Book Two - Only Jesus Knows */}
+                <div className={`text-center fade-in fade-in-delay-400 ${storySection.isVisible ? 'visible' : ''}`}>
+                  <div className="story-highlight-card relative">
+                    <div className="absolute top-2 right-2 bg-gold text-white text-xs font-bold px-2 py-1 rounded-full">Book Two</div>
+                    <div className="flex items-center justify-center gap-2 mb-3">
+                      <BookOpen className="w-5 h-5 sm:w-6 sm:h-6" />
+                    </div>
+                    <h3 className="font-bold text-base sm:text-lg mb-2">Only Jesus Knows</h3>
+                    <p className="text-xs sm:text-sm mb-3 opacity-90">Coming Soon</p>
+                    <p className="text-xs italic opacity-80">
+                      &quot;Throughout our years with Moise, we were left with questions that had no answers. My response was always the same: &apos;Only Jesus knows.&apos;&quot;
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -144,6 +173,51 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Family Photos Section */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6 bg-cream">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal-dark mb-4">Our Family</h2>
+            <p className="text-base sm:text-lg text-charcoal max-w-3xl mx-auto">
+              The beautiful family God has blessed us with, including precious moments with Moise and Kruz.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+              <div className="relative aspect-video rounded-xl overflow-hidden mb-4">
+                <Image
+                  src="/holmes-full-family.jpg"
+                  alt="The Holmes family - Jim, Karol, and all seven children"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
+                />
+              </div>
+              <div className="text-center">
+                <h3 className="text-lg font-bold text-charcoal-dark mb-2">The Holmes Family</h3>
+                <p className="text-charcoal">God's plan for our family was bigger than we ever imagined</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+              <div className="relative aspect-video rounded-xl overflow-hidden mb-4">
+                <Image
+                  src="/moise-and-kruz-park.JPEG"
+                  alt="Moise and Kruz enjoying time together at the park"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
+                />
+              </div>
+              <div className="text-center">
+                <h3 className="text-lg font-bold text-charcoal-dark mb-2">Moise & Kruz</h3>
+                <p className="text-charcoal">Brothers creating memories, one moment at a time</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Featured Quote */}
       <section
@@ -199,121 +273,7 @@ export default function Home() {
       </section>
 
 
-      {/* Footer with warmer design */}
-      <footer className="relative overflow-hidden">
-        {/* Warm gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cream via-sky-blue-light to-cream-light"></div>
-
-        {/* Decorative pattern overlay */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `repeating-radial-gradient(
-              circle at 0% 0%,
-              transparent 0,
-              transparent 40px,
-              var(--gold-light, rgba(218, 165, 32, 0.1)) 40px,
-              var(--gold-light, rgba(218, 165, 32, 0.1)) 80px
-            )`,
-            backgroundSize: '160px 160px'
-          }}></div>
-        </div>
-
-        <div className="relative z-10 py-12 sm:py-16 px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto">
-            {/* Footer Content Grid */}
-            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12">
-              {/* About Section */}
-              <div className="text-center md:text-left">
-                <h4 className="font-bold text-charcoal-dark mb-3 sm:mb-4 text-sm sm:text-base">About Karol</h4>
-                <p className="text-charcoal text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
-                  Author, mother of seven, and passionate advocate for vulnerable children.
-                  Sharing stories of faith, hope, and unexpected grace.
-                </p>
-              </div>
-
-              {/* Books Section */}
-              <div className="text-center md:text-left">
-                <h4 className="font-bold text-charcoal-dark mb-3 sm:mb-4 text-sm sm:text-base">My Books</h4>
-                <ul className="space-y-2">
-                  <li>
-                    <div className="text-charcoal text-xs sm:text-sm flex items-center justify-center md:justify-start gap-2 opacity-60">
-                      <BookOpen className="w-3 h-3 sm:w-4 sm:h-4" />
-                      Only Jesus Knows
-                      <span className="badge-gradient text-white text-xs px-2 py-1 rounded-full font-bold ml-1">Coming Soon</span>
-                    </div>
-                  </li>
-                  <li>
-                    <a href="https://a.co/d/jldTYKX" target="_blank" rel="noopener noreferrer" className="text-charcoal hover:text-sky-blue-dark text-xs sm:text-sm transition-colors flex items-center justify-center md:justify-start gap-2">
-                      <BookOpen className="w-3 h-3 sm:w-4 sm:h-4" />
-                      Grace According to His Gifts
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Quick Links */}
-              <div className="text-center md:text-left">
-                <h4 className="font-bold text-charcoal-dark mb-3 sm:mb-4 text-sm sm:text-base">Quick Links</h4>
-                <ul className="space-y-2">
-                  <li><Link href="/" className="text-charcoal hover:text-sky-blue-dark text-xs sm:text-sm transition-colors">Home</Link></li>
-                  <li><Link href="/about" className="text-charcoal hover:text-sky-blue-dark text-xs sm:text-sm transition-colors">About</Link></li>
-                  <li><Link href="/resources" className="text-charcoal hover:text-sky-blue-dark text-xs sm:text-sm transition-colors">Resources</Link></li>
-                  <li><Link href="/contact" className="text-charcoal hover:text-sky-blue-dark text-xs sm:text-sm transition-colors">Contact</Link></li>
-                </ul>
-              </div>
-
-              {/* Connect Section */}
-              <div className="text-center md:text-left">
-                <h4 className="font-bold text-charcoal-dark mb-3 sm:mb-4 text-sm sm:text-base">Let&apos;s Connect</h4>
-                <p className="text-charcoal text-xs sm:text-sm mb-3 sm:mb-4">
-                  Follow our journey and get in touch
-                </p>
-                <div className="space-y-3">
-                  <Link
-                    href="/contact"
-                    className="text-charcoal hover:text-sky-blue-dark text-xs sm:text-sm transition-colors flex items-center justify-center md:justify-start gap-2 group break-all"
-                  >
-                    <Mail className="w-3 h-3 sm:w-4 sm:h-4 group-hover:scale-110 transition-transform flex-shrink-0" />
-                    <span className="break-all">Get In Touch</span>
-                  </Link>
-                  <div className="flex gap-2 sm:gap-3 justify-center md:justify-start mt-3 sm:mt-4">
-                    <Link
-                      href="/contact"
-                      className="w-8 h-8 sm:w-10 sm:h-10 bg-cream/70 backdrop-blur-sm rounded-full flex items-center justify-center text-charcoal hover:bg-gold hover:text-white transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg group"
-                      aria-label="Contact Me"
-                    >
-                      <Mail className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
-                    </Link>
-                    <a
-                      href="#"
-                      className="w-8 h-8 sm:w-10 sm:h-10 bg-cream/70 backdrop-blur-sm rounded-full flex items-center justify-center text-charcoal hover:bg-sky-blue hover:text-white transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg group"
-                      aria-label="Facebook"
-                    >
-                      <Facebook className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
-                    </a>
-                    <a
-                      href="#"
-                      className="w-8 h-8 sm:w-10 sm:h-10 bg-cream/70 backdrop-blur-sm rounded-full flex items-center justify-center text-charcoal hover:bg-gold hover:text-white transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg group"
-                      aria-label="Instagram"
-                    >
-                      <Instagram className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Copyright Section */}
-            <div className="border-t border-dove-gray/30 pt-6 sm:pt-8">
-              <div className="text-center">
-                <p className="text-charcoal text-xs sm:text-sm">
-                  © 2025 Karol Holmes. All rights reserved. Made with <Heart className="inline-block w-3 h-3 sm:w-4 sm:h-4 text-gold fill-current" style={{ color: 'var(--gold)' }} /> and faith.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       {/* Back to Top Button */}
       <button
@@ -324,6 +284,12 @@ export default function Home() {
       >
         <ChevronUp className="w-6 h-6" />
       </button>
+      
+      {/* Book Summary Modal */}
+      <BookSummaryModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </div>
   );
 }
