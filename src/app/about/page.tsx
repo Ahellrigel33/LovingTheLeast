@@ -115,46 +115,46 @@ export default function About() {
 
               <div className="prose prose-lg max-w-none text-slate-600 space-y-6">
                 <p className="text-base sm:text-lg leading-relaxed">
-                  I&apos;m so glad you stopped by. I am already praying for you. Isn&apos;t it amazing how, when we pray for someone, we grow to love them? 
-                  The moment I wrote the first word of my first book, <em>Grace According to Gifts</em>, I began praying for anyone who would read. 
-                  Now I pray for anyone who reads my story or visits me on social media, or here on my website. 
+                  I&apos;m so glad you stopped by. I am already praying for you. Isn&apos;t it amazing how, when we pray for someone, we grow to love them?
+                  The moment I wrote the first word of my first book, <em>Grace According to Gifts</em>, I began praying for anyone who would read.
+                  Now I pray for anyone who reads my story or visits me on social media, or here on my website.
                   I want you to feel welcome and loved by me and by Almighty God.
                 </p>
 
                 <p className="text-base sm:text-lg leading-relaxed">
-                  I&apos;m Karol ~ My priorities are, first and foremost, a Child of God. Next, I am wife to my amazing husband, Jim. 
-                  Then I am mother to seven amazing children. Finally, I am a writer who is passionate about grief, loss, and parenting 
+                  I&apos;m Karol ~ My priorities are, first and foremost, a Child of God. Next, I am wife to my amazing husband, Jim.
+                  Then I am mother to seven amazing children. Finally, I am a writer who is passionate about grief, loss, and parenting
                   children and adults with intellectual and developmental disabilities. I believe firmly in keeping priorities and praying for them in this order.
                 </p>
 
                 <p className="text-base sm:text-lg leading-relaxed">
-                  Right out of high school, I earned a degree in Clinical Laboratory Science where I learned to analyze blood and body fluids 
-                  for diagnostic purposes. I worked for thirty years in the medical field. I used to have a bit of a &quot;save the world&quot; mentality. 
+                  Right out of high school, I earned a degree in Clinical Laboratory Science where I learned to analyze blood and body fluids
+                  for diagnostic purposes. I worked for thirty years in the medical field. I used to have a bit of a &quot;save the world&quot; mentality.
                   I wanted to be a missionary in a third-world country. Instead, God brought my mission to me and placed it in my arms.
                 </p>
 
                 <p className="text-base sm:text-lg leading-relaxed">
-                  Jim and I were content with what we considered to be the perfect-sized family after our fourth child was born. 
-                  God had a different plan. He brought a tiny baby boy from Haiti who needed someone to care for him. 
-                  This child changed the trajectory of our lives as we were thrust into the world of developmental disabilities and medical complexities. 
-                  Our eyes were opened to a desperate need. We couldn&apos;t pretend we did not know. Later, we adopted two more children with significant needs. 
+                  Jim and I were content with what we considered to be the perfect-sized family after our fourth child was born.
+                  God had a different plan. He brought a tiny baby boy from Haiti who needed someone to care for him.
+                  This child changed the trajectory of our lives as we were thrust into the world of developmental disabilities and medical complexities.
+                  Our eyes were opened to a desperate need. We couldn&apos;t pretend we did not know. Later, we adopted two more children with significant needs.
                   Two of our children are now in heaven.
                 </p>
 
                 <p className="text-base sm:text-lg leading-relaxed">
-                  Because of our experiences with our oldest disabled son, I have become aware of the alarming lack of services and support 
+                  Because of our experiences with our oldest disabled son, I have become aware of the alarming lack of services and support
                   for adults with intellectual and developmental disabilities. Once again, I cannot pretend I do not know.
                 </p>
 
                 <div className="bg-gradient-to-r from-orange-50 to-pink-50 p-6 rounded-lg border-l-4 border-orange-400 my-8">
                   <p className="text-base sm:text-lg leading-relaxed italic text-slate-700 font-medium">
-                    We are called to care for &quot;the least of these,&quot; those who are poor, vulnerable, and marginalized. 
+                    We are called to care for &quot;the least of these,&quot; those who are poor, vulnerable, and marginalized.
                     Is there anyone more vulnerable than those who are dependent on others for their most basic needs?
                   </p>
                 </div>
 
                 <p className="text-base sm:text-lg leading-relaxed">
-                  If you are bearing the heavy load of grief, loss, or parenting children with special needs, 
+                  If you are bearing the heavy load of grief, loss, or parenting children with special needs,
                   it is my prayer that I can walk with you on your journey.
                 </p>
 
@@ -185,7 +185,7 @@ export default function About() {
               A glimpse into the beautiful family God has blessed us with, including our precious moments with Moise and Kruz.
             </p>
           </div>
-          
+
           {/* Family Photos Grid */}
           <div className="grid gap-8 mb-12">
             {/* Large family photo */}
@@ -202,7 +202,6 @@ export default function About() {
                 </div>
                 <div className="text-center">
                   <h4 className="text-xl font-bold text-slate-800 mb-2">The Holmes Family</h4>
-                  <p className="text-slate-600">Jim, Karol, and all seven of our amazing children</p>
                 </div>
               </div>
             </div>
@@ -220,8 +219,7 @@ export default function About() {
                   />
                 </div>
                 <div className="text-center">
-                  <h4 className="text-lg font-bold text-slate-800 mb-2">Immediate Family</h4>
-                  <p className="text-slate-600">Jim, Karol, and their children</p>
+                  <h4 className="text-lg font-bold text-slate-800 mb-2">With Moise and Kruz</h4>
                 </div>
               </div>
 
@@ -237,7 +235,6 @@ export default function About() {
                 </div>
                 <div className="text-center">
                   <h4 className="text-lg font-bold text-slate-800 mb-2">Moise</h4>
-                  <p className="text-slate-600">Our precious son enjoying simple pleasures</p>
                 </div>
               </div>
             </div>
@@ -255,8 +252,7 @@ export default function About() {
                   />
                 </div>
                 <div className="text-center">
-                  <h5 className="font-semibold text-slate-800 mb-1">Moise & Kruz</h5>
-                  <p className="text-sm text-slate-600">Brothers in the driveway</p>
+                  <h5 className="font-semibold text-slate-800 mb-1">Brothers in the Driveway</h5>
                 </div>
               </div>
 
@@ -272,7 +268,6 @@ export default function About() {
                 </div>
                 <div className="text-center">
                   <h5 className="font-semibold text-slate-800 mb-1">Park Adventures</h5>
-                  <p className="text-sm text-slate-600">Creating memories together</p>
                 </div>
               </div>
 
@@ -288,7 +283,6 @@ export default function About() {
                 </div>
                 <div className="text-center">
                   <h5 className="font-semibold text-slate-800 mb-1">Everyday Moments</h5>
-                  <p className="text-sm text-slate-600">Simple joys together</p>
                 </div>
               </div>
             </div>
@@ -301,11 +295,11 @@ export default function About() {
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-2xl sm:text-3xl font-bold text-slate-800 mb-4">Connect With Me</h3>
           <p className="text-base sm:text-lg text-slate-600 mb-8">
-            I&apos;d love to hear from you. Whether you&apos;re walking a similar journey or simply want to connect, 
+            I&apos;d love to hear from you. Whether you&apos;re walking a similar journey or simply want to connect,
             I&apos;m here to listen and share in your story.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
+            <Link
               href="/contact"
               className="btn-primary btn-gradient text-white font-semibold py-3 px-8 rounded-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 inline-flex items-center gap-2 justify-center"
             >
@@ -319,14 +313,13 @@ export default function About() {
       {/* Back to Top Button */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-6 right-6 w-12 h-12 bg-gradient-to-br from-orange-500 to-pink-500 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-xl z-50 ${
-          showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
-        }`}
+        className={`fixed bottom-6 right-6 w-12 h-12 bg-gradient-to-br from-orange-500 to-pink-500 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-xl z-50 ${showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
+          }`}
         aria-label="Back to top"
       >
         <ChevronUp className="w-6 h-6" />
       </button>
-      
+
       <Footer />
     </div>
   );

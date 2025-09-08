@@ -14,12 +14,12 @@ export default function Home() {
   const heroSection = useIntersectionObserver({ threshold: 0.1 });
   const storySection = useIntersectionObserver({ threshold: 0.2 });
   const quoteSection = useIntersectionObserver({ threshold: 0.2 });
-  
+
   const ctaSection = useIntersectionObserver({ threshold: 0.3 });
 
   // Back to top button visibility
   const [showBackToTop, setShowBackToTop] = useState(false);
-  
+
   // Book summary modal visibility
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -64,7 +64,7 @@ export default function Home() {
               </div>
               <div className={`space-y-4 fade-in fade-in-delay-200 ${heroSection.isVisible ? 'visible' : ''} text-center lg:text-left`}>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <button 
+                  <button
                     className="btn-secondary-new font-semibold py-3 px-6 sm:px-8 rounded-lg text-base sm:text-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 inline-flex items-center gap-2 w-full sm:w-auto justify-center opacity-60 cursor-not-allowed"
                     disabled
                   >
@@ -112,107 +112,86 @@ export default function Home() {
       </section>
 
 
-      {/* Story Preview */}
+      {/* Books and Message Section */}
       <section
         ref={storySection.ref as React.RefObject<HTMLElement>}
         className="story-preview px-4 sm:px-6 py-12 sm:py-16"
       >
         <div className="story-content">
           <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
-              <div className={`lg:col-span-2 story-card fade-in ${storySection.isVisible ? 'visible' : ''}`}>
-                <div className="story-accent"></div>
-                <h2 className="story-title text-xl sm:text-2xl md:text-3xl font-bold italic text-charcoal-dark mb-4">"Love in action is a harsh and dreadful thing." <span className="text-base font-medium not-italic">~Fyodor Dostoevsky</span></h2>
-                <p className={`story-text text-sm sm:text-base mb-4 fade-in fade-in-delay-100 ${storySection.isVisible ? 'visible' : ''}`}>
+            {/* Opening Quote and Message */}
+            <div className={`text-center mb-12 fade-in ${storySection.isVisible ? 'visible' : ''}`}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold italic text-charcoal-dark mb-6">
+                "Love in action is a harsh and dreadful thing."
+              </h2>
+              <p className="text-lg sm:text-xl text-charcoal mb-2 font-handwritten">~Fyodor Dostoevsky</p>
+
+              <div className="max-w-4xl mx-auto mt-8">
+                <p className={`text-base sm:text-lg text-charcoal leading-relaxed mb-4 fade-in fade-in-delay-100 ${storySection.isVisible ? 'visible' : ''}`}>
                   Nearly every community has families and caregivers desperately in need of help with their dearly loved children with intellectual and developmental disabilities. Yet many people do not even know that this need exists.
                 </p>
-                <p className={`story-text text-sm sm:text-base fade-in fade-in-delay-200 ${storySection.isVisible ? 'visible' : ''}`}>
+                <p className={`text-base sm:text-lg text-charcoal leading-relaxed fade-in fade-in-delay-200 ${storySection.isVisible ? 'visible' : ''}`}>
                   Churches are oblivious to the fact that there are hurting, lonely families right in their backyard.
                 </p>
               </div>
-              
-              <div className="lg:col-span-1 space-y-6">
-                {/* Book One - Grace According to Gifts */}
-                <div className={`text-center fade-in fade-in-delay-300 ${storySection.isVisible ? 'visible' : ''}`}>
-                  <div className="story-highlight-card relative">
-                    <div className="absolute top-2 right-2 bg-sky-blue text-white text-xs font-bold px-2 py-1 rounded-full">Book One</div>
-                    <div className="flex items-center justify-center gap-2 mb-3">
-                      <BookOpen className="w-5 h-5 sm:w-6 sm:h-6" />
+            </div>
+
+            {/* Two Books Section */}
+            <div className="text-center mb-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-charcoal-dark mb-2">This Journey in Two Parts</h3>
+              <p className="text-charcoal opacity-80">Exploring love in action from different perspectives</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {/* Book One - Grace According to Gifts */}
+              <div className={`fade-in fade-in-delay-300 ${storySection.isVisible ? 'visible' : ''}`}>
+                <div className="story-highlight-card relative h-full">
+                  <div className="absolute top-3 right-3 bg-sky-blue text-white text-sm font-bold px-3 py-1.5 rounded-full">Book One</div>
+                  <div className="text-center p-6">
+                    <div className="flex items-center justify-center gap-2 mb-4">
+                      <BookOpen className="w-6 h-6 text-sky-blue-dark" />
                     </div>
-                    <h3 className="font-bold text-base sm:text-lg mb-2">Grace According to Gifts</h3>
-                    <p className="text-xs sm:text-sm mb-3 opacity-90">Available Now</p>
-                    <p className="text-xs italic opacity-80 mb-4">
-                      The first book in Karol's journey of loving the least of these.
-                    </p>
-                    <button 
+                    <h3 className="font-bold text-xl mb-3 text-charcoal-dark">Grace According to Gifts</h3>
+                    <div className="mb-4">
+                      <span className="bg-sky-blue/10 text-sky-blue-dark text-sm font-semibold px-3 py-1 rounded-full">
+                        Available Now
+                      </span>
+                    </div>
+                    <blockquote className="text-sm italic text-charcoal-light mb-6 border-l-2 border-gold pl-4">
+                      "We are your servants, Lord. Use us to make a difference in the lives of others."
+                    </blockquote>
+                    <button
                       onClick={() => setIsModalOpen(true)}
-                      className="bg-sky-blue hover:bg-sky-blue-dark text-white text-sm font-semibold py-2 px-4 rounded-lg transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5"
+                      className="bg-sky-blue hover:bg-sky-blue-dark text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg transform hover:-translate-y-0.5 w-full sm:w-auto"
                     >
-                      Read Summary
+                      Read Full Summary
                     </button>
                   </div>
                 </div>
+              </div>
 
-                {/* Book Two - Only Jesus Knows */}
-                <div className={`text-center fade-in fade-in-delay-400 ${storySection.isVisible ? 'visible' : ''}`}>
-                  <div className="story-highlight-card relative">
-                    <div className="absolute top-2 right-2 bg-gold text-white text-xs font-bold px-2 py-1 rounded-full">Book Two</div>
-                    <div className="flex items-center justify-center gap-2 mb-3">
-                      <BookOpen className="w-5 h-5 sm:w-6 sm:h-6" />
+              {/* Book Two - Only Jesus Knows */}
+              <div className={`fade-in fade-in-delay-400 ${storySection.isVisible ? 'visible' : ''}`}>
+                <div className="story-highlight-card relative h-full">
+                  <div className="absolute top-3 right-3 bg-gold text-white text-sm font-bold px-3 py-1.5 rounded-full">Book Two</div>
+                  <div className="text-center p-6">
+                    <div className="flex items-center justify-center gap-2 mb-4">
+                      <BookOpen className="w-6 h-6 text-gold-dark" />
                     </div>
-                    <h3 className="font-bold text-base sm:text-lg mb-2">Only Jesus Knows</h3>
-                    <p className="text-xs sm:text-sm mb-3 opacity-90">Coming Soon</p>
-                    <p className="text-xs italic opacity-80">
-                      &quot;Throughout our years with Moise, we were left with questions that had no answers. My response was always the same: &apos;Only Jesus knows.&apos;&quot;
-                    </p>
+                    <h3 className="font-bold text-xl mb-3 text-charcoal-dark">Only Jesus Knows</h3>
+                    <div className="mb-4">
+                      <span className="bg-gold/20 text-gold-dark text-sm font-semibold px-3 py-1 rounded-full">
+                        Coming Soon
+                      </span>
+                    </div>
+                    <blockquote className="text-sm italic text-charcoal-light mb-6 border-l-2 border-gold pl-4">
+                      "Throughout our years with Moise, we were left with questions that had no answers. My response was always the same: 'Only Jesus knows.'"
+                    </blockquote>
+                    <div className="bg-gray-100 text-gray-500 font-semibold py-3 px-6 rounded-lg cursor-not-allowed w-full sm:w-auto">
+                      Coming Soon
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Family Photos Section */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 bg-cream">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-charcoal-dark mb-4">Our Family</h2>
-            <p className="text-base sm:text-lg text-charcoal max-w-3xl mx-auto">
-              The beautiful family God has blessed us with, including precious moments with Moise and Kruz.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300">
-              <div className="relative aspect-video rounded-xl overflow-hidden mb-4">
-                <Image
-                  src="/holmes-full-family.jpg"
-                  alt="The Holmes family - Jim, Karol, and all seven children"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
-                />
-              </div>
-              <div className="text-center">
-                <h3 className="text-lg font-bold text-charcoal-dark mb-2">The Holmes Family</h3>
-                <p className="text-charcoal">God's plan for our family was bigger than we ever imagined</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300">
-              <div className="relative aspect-video rounded-xl overflow-hidden mb-4">
-                <Image
-                  src="/moise-and-kruz-park.JPEG"
-                  alt="Moise and Kruz enjoying time together at the park"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 500px"
-                />
-              </div>
-              <div className="text-center">
-                <h3 className="text-lg font-bold text-charcoal-dark mb-2">Moise & Kruz</h3>
-                <p className="text-charcoal">Brothers creating memories, one moment at a time</p>
               </div>
             </div>
           </div>
@@ -223,19 +202,26 @@ export default function Home() {
       <section
         id="quote-section"
         ref={quoteSection.ref as React.RefObject<HTMLElement>}
-        className="quote-section px-4 sm:px-6 py-12 sm:py-16"
+        className="px-4 sm:px-6 py-8 sm:py-12"
+        style={{
+          background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 25%, #f7f4e8 50%, #fdfcf8 75%, #f0f9ff 100%)',
+          minHeight: 'auto'
+        }}
       >
-        <div className="quote-wrapper">
-          <div className="relative z-10 w-full">
-            <div className={`quote-card fade-in ${quoteSection.isVisible ? 'visible' : ''} max-w-3xl mx-auto`}>
-              <div className="relative px-6 sm:px-8 py-8 sm:py-10">
-                <span className="quote-marks quote-mark-start text-4xl sm:text-5xl md:text-6xl">&quot;</span>
-                <blockquote className="quote-text text-lg sm:text-xl md:text-2xl lg:text-3xl leading-relaxed">
-                  I couldn&apos;t see how any of it could &apos;work together for good.&apos; All I could see was my son&apos;s suffering... How many times can a human heart break and still survive? Mine broke every day.
+        <div className="max-w-4xl mx-auto">
+          <div className={`fade-in ${quoteSection.isVisible ? 'visible' : ''}`}>
+            <div
+              className="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl border border-orange-200/30 max-w-3xl mx-auto"
+              style={{ padding: '1.5rem 2rem' }}
+            >
+              <div className="text-center">
+                <blockquote className="text-lg sm:text-xl md:text-2xl leading-relaxed italic text-charcoal-dark font-medium">
+                  &quot;I couldn&apos;t see how any of it could &apos;work together for good.&apos; All I could see was my son&apos;s suffering... How many times can a human heart break and still survive? Mine broke every day.&quot;
                 </blockquote>
-                <span className="quote-marks quote-mark-end text-4xl sm:text-5xl md:text-6xl">&quot;</span>
               </div>
-              <p className="quote-author text-sm sm:text-base md:text-lg px-6 sm:px-8 pb-6 sm:pb-8">— Karol Holmes, Only Jesus Knows</p>
+              <p className="text-sm sm:text-base text-gold-dark font-semibold text-center mt-4 font-handwritten">
+                — Karol Holmes, Only Jesus Knows
+              </p>
             </div>
           </div>
         </div>
@@ -258,7 +244,7 @@ export default function Home() {
           <div className={`flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-xs sm:text-sm fade-in fade-in-delay-100 ${ctaSection.isVisible ? 'visible' : ''} text-cream-light font-medium`}>
             <span className="flex items-center gap-1">
               <BookOpen className="w-3 h-3 sm:w-4 sm:h-4 text-gold" style={{ color: 'var(--gold)' }} />
-              Available Now
+              Available Soon
             </span>
             <span className="flex items-center gap-1">
               <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-gold" style={{ color: 'var(--gold)' }} />
@@ -284,11 +270,11 @@ export default function Home() {
       >
         <ChevronUp className="w-6 h-6" />
       </button>
-      
+
       {/* Book Summary Modal */}
-      <BookSummaryModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
+      <BookSummaryModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
       />
     </div>
   );

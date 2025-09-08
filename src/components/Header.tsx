@@ -69,10 +69,10 @@ export default function Header({ isStudyGuide = false }: HeaderProps) {
                     <span className="badge-gradient text-white text-xs px-2 py-1 rounded-full font-bold">Coming Soon</span>
                   </button>
                 </div>
-                <Link href="/" className="btn-cta text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2">
+                <a href="https://a.co/d/jldTYKX" target="_blank" rel="noopener noreferrer" className="btn-cta text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2">
                   <BookOpen className="w-4 h-4" />
                   Order Book
-                </Link>
+                </a>
               </>
             ) : (
               <Link
@@ -101,7 +101,7 @@ export default function Header({ isStudyGuide = false }: HeaderProps) {
 
       {/* Mobile Navigation */}
       <div
-        className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${isMobileMenuOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
+        className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${isMobileMenuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
           }`}
       >
         <nav className="px-6 pb-4 space-y-2">
@@ -119,14 +119,14 @@ export default function Header({ isStudyGuide = false }: HeaderProps) {
               <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-left py-2 px-4 text-charcoal hover:text-sky-blue-dark hover:bg-cream-light/50 rounded-lg transition-all duration-200">
                 Contact
               </Link>
-              <div className="py-2 px-4 text-dove-gray rounded-lg flex items-center justify-between opacity-50">
+              <div className="py-2 px-4 text-charcoal rounded-lg flex items-center justify-between opacity-50">
                 <span>Study Guide</span>
                 <span className="badge-gradient text-white text-xs px-2 py-1 rounded-full font-bold">Coming Soon</span>
               </div>
-              <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="w-full btn-cta text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 mt-3">
+              <a href="https://a.co/d/jldTYKX" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="w-full btn-cta text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 mt-3">
                 <BookOpen className="w-4 h-4" />
                 Order Book
-              </Link>
+              </a>
             </>
           ) : (
             <Link
