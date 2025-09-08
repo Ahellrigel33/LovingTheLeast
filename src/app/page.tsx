@@ -6,7 +6,7 @@ import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BookSummaryModal from "@/components/BookSummaryModal";
-import { Heart, BookOpen, Sparkles, ChevronUp, Mail, Instagram, ExternalLink } from "lucide-react";
+import { Heart, BookOpen, Sparkles, ChevronUp, ExternalLink } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function Home() {
@@ -122,7 +122,7 @@ export default function Home() {
             {/* Opening Quote and Message */}
             <div className={`text-center mb-12 fade-in ${storySection.isVisible ? 'visible' : ''}`}>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold italic text-charcoal-dark mb-6">
-                "Love in action is a harsh and dreadful thing."
+                &quot;Love in action is a harsh and dreadful thing.&quot;
               </h2>
               <p className="text-lg sm:text-xl text-charcoal mb-2 font-handwritten">~Fyodor Dostoevsky</p>
 
@@ -158,7 +158,7 @@ export default function Home() {
                       </span>
                     </div>
                     <blockquote className="text-sm italic text-charcoal-light mb-6 border-l-2 border-gold pl-4">
-                      "We are your servants, Lord. Use us to make a difference in the lives of others."
+                      &quot;We are your servants, Lord. Use us to make a difference in the lives of others.&quot;
                     </blockquote>
                     <button
                       onClick={() => setIsModalOpen(true)}
@@ -185,7 +185,7 @@ export default function Home() {
                       </span>
                     </div>
                     <blockquote className="text-sm italic text-charcoal-light mb-6 border-l-2 border-gold pl-4">
-                      "Throughout our years with Moise, we were left with questions that had no answers. My response was always the same: 'Only Jesus knows.'"
+                      &quot;Throughout our years with Moise, we were left with questions that had no answers. My response was always the same: &apos;Only Jesus knows.&apos;&quot;
                     </blockquote>
                     <div className="bg-gray-100 text-gray-500 font-semibold py-3 px-6 rounded-lg cursor-not-allowed w-full sm:w-auto">
                       Coming Soon

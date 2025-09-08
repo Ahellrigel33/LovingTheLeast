@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 import { X, BookOpen, ExternalLink } from "lucide-react";
 
@@ -90,15 +90,15 @@ export default function BookSummaryModal({ isOpen, onClose }: BookSummaryModalPr
 
               <div className="space-y-4 text-charcoal leading-relaxed">
                 <p>
-                  Life was going precisely as planned when Jim and Karol Holmes began praying, "We are your servants, Lord. Use us to make a difference in the lives of others." In response, God brought something they didn't expect. All it took was one phone call to set their lives on a path entirely different from the one they had imagined. Suddenly, they were faced with an agonizing decision when God asked them to love one very special child.
+                  Life was going precisely as planned when Jim and Karol Holmes began praying, &quot;We are your servants, Lord. Use us to make a difference in the lives of others.&quot; In response, God brought something they didn&apos;t expect. All it took was one phone call to set their lives on a path entirely different from the one they had imagined. Suddenly, they were faced with an agonizing decision when God asked them to love one very special child.
                 </p>
 
                 <p>
-                  In Grace According To Gifts, Karol Glueck Holmes is unflinchingly honest as she takes the reader on an incredible journey of love in action. She and Jim discover that, together, they have a gift that they didn't know they had and, frankly, didn't even want. As they answer God's call for their life, they are thrust into a world of heartache, tragedy, and extraordinary testing of their faith. They asked God to use them to make a difference for others. They never imagined that three little children would lead them and, ultimately, make a radical difference in them.
+                  In Grace According To Gifts, Karol Glueck Holmes is unflinchingly honest as she takes the reader on an incredible journey of love in action. She and Jim discover that, together, they have a gift that they didn&apos;t know they had and, frankly, didn&apos;t even want. As they answer God&apos;s call for their life, they are thrust into a world of heartache, tragedy, and extraordinary testing of their faith. They asked God to use them to make a difference for others. They never imagined that three little children would lead them and, ultimately, make a radical difference in them.
                 </p>
 
                 <p>
-                  Wherever you are in your journey through life, Karol's story will bring hope and cause you to stop and ask, "What does God want for my life?"
+                  Wherever you are in your journey through life, Karol&apos;s story will bring hope and cause you to stop and ask, &quot;What does God want for my life?&quot;
                 </p>
               </div>
 
