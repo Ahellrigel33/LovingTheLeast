@@ -111,7 +111,7 @@ export default function Resources() {
                 </div>
                 <div className="bg-white rounded-xl p-6 shadow-lg flex-grow">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="bg-gradient-to-r from-orange-100 to-pink-100 text-orange-600 px-3 py-1 rounded-full text-sm font-semibold">Age 3 or Kindergarten</span>
+                    <span className="bg-gradient-to-r from-orange-100 to-pink-100 text-orange-600 px-3 py-1 rounded-full text-sm font-semibold">Age 3-5</span>
                   </div>
                   <h3 className="text-lg font-bold text-slate-800 mb-2">Early Childhood Education</h3>
                   <p className="text-slate-600 text-sm sm:text-base">
@@ -132,8 +132,7 @@ export default function Resources() {
                   </div>
                   <h3 className="text-lg font-bold text-slate-800 mb-2">Special Education</h3>
                   <p className="text-slate-600 text-sm sm:text-base">
-                    Every child, regardless of disability, has a legal right to education and services through their local school district.
-                    Contact your school district or ISBE.
+                    According to the United States Department of Education, every child, regardless of the nature and severity of disabilities, is entitled to a Free Appropriate Public Education (FAPE). Section 504 and Title II require public schools to provide appropriate education and modifications, aids and related services free of charge to students with disabilities and their parents or guardians. Education and services are provided through your local school district. Contact your local school district or ISBE.
                   </p>
                 </div>
               </div>
@@ -203,6 +202,7 @@ export default function Resources() {
                 A special needs trust can be set up at the same time as your legal will. Once your child is eligible for Supplemental Security Income or disability,
                 they are allowed no more than two thousand dollars in their name to obtain SSI. Any assets left in their name could jeopardize their eligibility.
                 A special needs trust allows a certain percentage of your assets to be set aside for your child&apos;s use and managed by a designated adult.
+                Also see ABLE in the list of resources below.
               </p>
             </div>
           </div>
@@ -223,6 +223,35 @@ export default function Resources() {
           </div>
 
           <div className="grid gap-6 sm:gap-8">
+
+            {/* ABLE National Resource Center */}
+            <div className={`bg-white rounded-xl p-6 shadow-lg fade-in ${resourcesSection.isVisible ? 'visible' : ''}`}>
+              <div className="flex items-start gap-4">
+                <div className="w-24 h-24 bg-white rounded-lg flex items-center justify-center flex-shrink-0 shadow-sm border border-gray-100">
+                  <Image
+                    src="/resources-logos/able-national-resource-center.svg"
+                    alt="ABLE National Resource Center logo"
+                    width={72}
+                    height={72}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="flex-grow">
+                  <h3 className="text-lg font-bold text-slate-800 mb-2">ABLE National Resource Center</h3>
+                  <p className="text-slate-600 text-sm sm:text-base mb-3">
+                    Connects people with disabilities and those who support them to information about the Achieving a Better Life Act and ABLE financial accounts.
+                  </p>
+                  <a
+                    href="https://www.ablenrc.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 text-sm font-medium transition-colors"
+                  >
+                    Home - ABLE National Resource Center <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
 
             {/* Advocates for Access */}
             <div className={`bg-white rounded-xl p-6 shadow-lg fade-in ${resourcesSection.isVisible ? 'visible' : ''}`}>
@@ -427,6 +456,35 @@ export default function Resources() {
                     className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 text-sm font-medium transition-colors"
                   >
                     Equip for Equality <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* FAPE */}
+            <div className={`bg-white rounded-xl p-6 shadow-lg fade-in fade-in-delay-650 ${resourcesSection.isVisible ? 'visible' : ''}`}>
+              <div className="flex items-start gap-4">
+                <div className="w-24 h-24 bg-white rounded-lg flex items-center justify-center flex-shrink-0 shadow-sm border border-gray-100">
+                  <Image
+                    src="/resources-logos/us-department-of-education-fape.svg"
+                    alt="U.S. Department of Education FAPE logo"
+                    width={72}
+                    height={72}
+                    className="object-contain"
+                  />
+                </div>
+                <div className="flex-grow">
+                  <h3 className="text-lg font-bold text-slate-800 mb-2">FAPE</h3>
+                  <p className="text-slate-600 text-sm sm:text-base mb-3">
+                    Ensures Free Appropriate Public Education ensures Nondiscrimination on the Basis of Handicap in Programs and Activities Receiving or Benefiting From Federal Financial Assistance; and Assistance to States for Education of Handicapped Children.
+                  </p>
+                  <a
+                    href="https://www.ed.gov/laws-and-policy/individuals-disabilities/free-appropriate-public-education"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-orange-600 hover:text-orange-700 text-sm font-medium transition-colors"
+                  >
+                    Free Appropriate Public Education | U.S. Department of Education <ExternalLink className="w-4 h-4" />
                   </a>
                 </div>
               </div>

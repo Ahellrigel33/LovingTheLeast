@@ -3,7 +3,7 @@
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Heart, BookOpen, ChevronUp, Mail, Send, User, MessageSquare } from "lucide-react";
+import { Heart, BookOpen, ChevronUp, Mail, MessageSquare } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function Contact() {
@@ -13,16 +13,6 @@ export default function Contact() {
 
   // Back to top button visibility
   const [showBackToTop, setShowBackToTop] = useState(false);
-  
-  // Form state
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,50 +27,20 @@ export default function Contact() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
-
-    try {
-      // Create mailto link with form data
-      const subject = encodeURIComponent(formData.subject || 'Contact from Loving the Least website');
-      const body = encodeURIComponent(`
-Name: ${formData.name}
-Email: ${formData.email}
-
-Message:
-${formData.message}
-      `.trim());
-      
-      const mailtoLink = `mailto:karolholmesauthor@gmail.com?subject=${subject}&body=${body}`;
-      
-      // Open the default email client
-      window.location.href = mailtoLink;
-      
-      setSubmitStatus('success');
-      
-      // Clear form
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-    } catch {
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  // Initialize Tally script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.textContent = `
+      var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
+    `;
+    document.body.appendChild(script);
+    
+    return () => {
+      // Cleanup script if needed
+      const scripts = document.querySelectorAll('script[src="https://tally.so/widgets/embed.js"]');
+      scripts.forEach(script => script.remove());
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-white children-drawing-pattern">
@@ -129,137 +89,38 @@ ${formData.message}
             <div className="bg-white rounded-2xl p-6 sm:p-8 lg:p-12 shadow-xl">
               <div className="text-center mb-8">
                 <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-pink-400 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <Send className="w-8 h-8 text-white" />
+                  <Mail className="w-8 h-8 text-white" />
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-bold text-slate-800 mb-4">Get In Touch</h2>
                 <div className="w-16 h-1 bg-gradient-to-r from-orange-400 to-pink-400 mx-auto rounded-full mb-6"></div>
               </div>
 
-              {submitStatus === 'success' && (
-                <div className="mb-8 p-4 bg-green-50 border-l-4 border-green-400 rounded-lg animate-fade-in">
-                  <div className="flex items-center gap-2">
-                    <Heart className="w-5 h-5 text-green-600 fill-current" />
-                    <p className="text-green-700 font-medium">
-                      Thank you for reaching out! Your default email client should have opened with your message. 
-                      If it didn&apos;t, you can email me directly at karolholmesauthor@gmail.com
-                    </p>
-                  </div>
-                </div>
-              )}
+              {/* Tally Form Embed */}
+              <div className="w-full">
+                <iframe 
+                  data-tally-src="https://tally.so/embed/mJydPY?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+                  loading="lazy" 
+                  width="100%" 
+                  height="447" 
+                  frameBorder="0" 
+                  marginHeight={0} 
+                  marginWidth={0} 
+                  title="Contact Me"
+                  className="rounded-lg"
+                />
+              </div>
 
-              {submitStatus === 'error' && (
-                <div className="mb-8 p-4 bg-red-50 border-l-4 border-red-400 rounded-lg animate-fade-in">
-                  <p className="text-red-700 font-medium">
-                    There was an issue sending your message. Please try emailing me directly at karolholmesauthor@gmail.com
-                  </p>
-                </div>
-              )}
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">
-                      Your Name *
-                    </label>
-                    <div className="relative">
-                      <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        required
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        className="w-full pl-12 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
-                        placeholder="Enter your full name"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">
-                      Email Address *
-                    </label>
-                    <div className="relative">
-                      <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className="w-full pl-12 pr-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
-                        placeholder="your.email@example.com"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-semibold text-slate-700 mb-2">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
-                    placeholder="What would you like to talk about?"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">
-                    Your Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={6}
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors resize-vertical"
-                    placeholder="Share your story, ask questions, or just say hello..."
-                  />
-                </div>
-
-                <div className="text-center">
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="btn-primary btn-gradient text-white font-semibold py-3 px-8 rounded-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 inline-flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              <div className="text-center text-sm text-slate-500 mt-6">
+                <p>
+                  Or email me directly at{' '}
+                  <a 
+                    href="mailto:karolholmesauthor@gmail.com" 
+                    className="text-orange-600 hover:text-orange-700 font-medium transition-colors"
                   >
-                    {isSubmitting ? (
-                      <>
-                        <div className="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full"></div>
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        <Send className="w-5 h-5" />
-                        Send Message
-                        <Heart className="w-4 h-4 fill-current" />
-                      </>
-                    )}
-                  </button>
-                </div>
-
-                <div className="text-center text-sm text-slate-500">
-                  <p>
-                    Or email me directly at{' '}
-                    <a 
-                      href="mailto:karolholmesauthor@gmail.com" 
-                      className="text-orange-600 hover:text-orange-700 font-medium transition-colors"
-                    >
-                      karolholmesauthor@gmail.com
-                    </a>
-                  </p>
-                </div>
-              </form>
+                    karolholmesauthor@gmail.com
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
