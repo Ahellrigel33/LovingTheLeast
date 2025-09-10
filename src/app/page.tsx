@@ -130,9 +130,6 @@ export default function Home() {
                 <p className={`text-base sm:text-lg text-charcoal leading-relaxed mb-4 fade-in fade-in-delay-100 ${storySection.isVisible ? 'visible' : ''}`}>
                   Nearly every community has families and caregivers desperately in need of help with their dearly loved children with intellectual and developmental disabilities. Yet many people do not even know that this need exists.
                 </p>
-                <p className={`text-base sm:text-lg text-charcoal leading-relaxed fade-in fade-in-delay-200 ${storySection.isVisible ? 'visible' : ''}`}>
-                  Churches are oblivious to the fact that there are hurting, lonely families right in their backyard.
-                </p>
               </div>
             </div>
 
