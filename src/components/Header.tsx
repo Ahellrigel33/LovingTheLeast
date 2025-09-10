@@ -29,19 +29,19 @@ export default function Header({ isStudyGuide = false }: HeaderProps) {
         : "bg-cream-light/90 backdrop-blur-sm shadow-sm border-b border-dove-gray/20"
         }`}
     >
-      <div className="max-w-8xl mx-auto px-6 py-4">
+      <div className="max-w-8xl mx-auto px-6 py-2 md:py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 min-w-0">
             <div className="relative">
               <Image
                 src="/logo.png"
                 alt="Dove Logo"
                 width={24}
                 height={24}
-                className="w-12 h-12 object-contain"
+                className="w-8 h-8 md:w-12 md:h-12 object-contain"
               />
             </div>
-            <h1 className="text-xl md:text-2xl font-bold text-charcoal-dark handwritten" style={{ color: 'var(--charcoal-dark)' }}>
+            <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-charcoal-dark handwritten whitespace-nowrap leading-none" style={{ color: 'var(--charcoal-dark)' }}>
               Only Jesus Knows
             </h1>
           </div>
