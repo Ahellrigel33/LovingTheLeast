@@ -234,6 +234,7 @@ export default function Resources() {
                     width={72}
                     height={72}
                     className="object-contain"
+                    unoptimized
                   />
                 </div>
                 <div className="flex-grow">
@@ -263,6 +264,7 @@ export default function Resources() {
                     width={72}
                     height={72}
                     className="object-contain"
+                    unoptimized
                   />
                 </div>
                 <div className="flex-grow">
@@ -292,6 +294,7 @@ export default function Resources() {
                     width={72}
                     height={72}
                     className="object-contain"
+                    unoptimized
                   />
                 </div>
                 <div className="flex-grow">
@@ -322,6 +325,7 @@ export default function Resources() {
                     width={72}
                     height={72}
                     className="object-contain"
+                    unoptimized
                   />
                 </div>
                 <div className="flex-grow">
@@ -351,6 +355,7 @@ export default function Resources() {
                     width={72}
                     height={72}
                     className="object-contain"
+                    unoptimized
                   />
                 </div>
                 <div className="flex-grow">
@@ -381,6 +386,7 @@ export default function Resources() {
                     width={72}
                     height={72}
                     className="object-contain"
+                    unoptimized
                   />
                 </div>
                 <div className="flex-grow">
@@ -411,6 +417,7 @@ export default function Resources() {
                     width={72}
                     height={72}
                     className="object-contain"
+                    unoptimized
                   />
                 </div>
                 <div className="flex-grow">
@@ -441,6 +448,7 @@ export default function Resources() {
                     width={72}
                     height={72}
                     className="object-contain"
+                    unoptimized
                   />
                 </div>
                 <div className="flex-grow">
@@ -471,6 +479,7 @@ export default function Resources() {
                     width={72}
                     height={72}
                     className="object-contain"
+                    unoptimized
                   />
                 </div>
                 <div className="flex-grow">
@@ -500,6 +509,7 @@ export default function Resources() {
                     width={72}
                     height={72}
                     className="object-contain"
+                    unoptimized
                   />
                 </div>
                 <div className="flex-grow">
@@ -530,6 +540,7 @@ export default function Resources() {
                     width={72}
                     height={72}
                     className="object-contain"
+                    unoptimized
                   />
                 </div>
                 <div className="flex-grow">
@@ -559,6 +570,7 @@ export default function Resources() {
                     width={72}
                     height={72}
                     className="object-contain"
+                    unoptimized
                   />
                 </div>
                 <div className="flex-grow">
@@ -589,6 +601,7 @@ export default function Resources() {
                     width={72}
                     height={72}
                     className="object-contain"
+                    unoptimized
                   />
                 </div>
                 <div className="flex-grow">
@@ -618,6 +631,7 @@ export default function Resources() {
                     width={72}
                     height={72}
                     className="object-contain"
+                    unoptimized
                   />
                 </div>
                 <div className="flex-grow">
@@ -647,6 +661,7 @@ export default function Resources() {
                     width={72}
                     height={72}
                     className="object-contain"
+                    unoptimized
                   />
                 </div>
                 <div className="flex-grow">

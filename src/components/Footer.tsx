@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Heart, BookOpen, Mail, Instagram } from "lucide-react";
+import { Heart, BookOpen, Mail, Instagram, Facebook } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -88,6 +88,15 @@ export default function Footer() {
                   >
                     <Mail className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
                   </Link>
+                  <a
+                    href="https://www.facebook.com/61577947618597"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 sm:w-10 sm:h-10 bg-cream/70 backdrop-blur-sm rounded-full flex items-center justify-center text-charcoal hover:bg-gold hover:text-white transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg group"
+                    aria-label="Facebook"
+                  >
+                    <Facebook className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
+                  </a>
                   <a
                     href="https://www.instagram.com/karolholmesauthor/#"
                     target="_blank"

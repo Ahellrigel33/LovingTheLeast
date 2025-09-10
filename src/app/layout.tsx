@@ -19,6 +19,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Loving The Least - Only Jesus Knows",
   description: "The story of Moise, our son, and how a short-term commitment changed our family forever. A book by Karol Holmes about loving the world's most vulnerable.",
+  icons: {
+    icon: [{ url: '/favicon.ico' }],
+    shortcut: ['/favicon.ico'],
+    apple: [{ url: '/favicon.ico' }],
+  },
 };
 
 export default function RootLayout({
@@ -28,6 +33,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
+      </head>
       <body
         className={`${playfairDisplay.variable} ${inter.variable} antialiased`}
       >

@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Heart, BookOpen, Menu, X } from "lucide-react";
+import { BookOpen, Menu, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface HeaderProps {
   isStudyGuide?: boolean;
@@ -24,16 +25,21 @@ export default function Header({ isStudyGuide = false }: HeaderProps) {
   return (
     <header
       className={`${isStudyGuide ? 'sticky top-0' : 'fixed top-0'} w-full z-50 transition-all duration-500 ${isScrolled
-          ? "bg-cream/95 backdrop-blur-md shadow-lg border-b border-dove-gray/30"
-          : "bg-cream-light/90 backdrop-blur-sm shadow-sm border-b border-dove-gray/20"
+        ? "bg-cream/95 backdrop-blur-md shadow-lg border-b border-dove-gray/30"
+        : "bg-cream-light/90 backdrop-blur-sm shadow-sm border-b border-dove-gray/20"
         }`}
     >
-      <div className="max-w-6xl mx-auto px-6 py-4">
+      <div className="max-w-8xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="relative">
-              <BookOpen className="w-6 h-6 text-sky-blue-dark" style={{ color: 'var(--sky-blue-dark)' }} />
-              <Heart className="w-3 h-3 text-gold fill-current absolute -top-1 -right-1 animate-heartbeat" style={{ color: 'var(--gold)' }} />
+              <Image
+                src="/logo.png"
+                alt="Dove Logo"
+                width={24}
+                height={24}
+                className="w-12 h-12 object-contain"
+              />
             </div>
             <h1 className="text-xl md:text-2xl font-bold text-charcoal-dark handwritten" style={{ color: 'var(--charcoal-dark)' }}>
               Only Jesus Knows
