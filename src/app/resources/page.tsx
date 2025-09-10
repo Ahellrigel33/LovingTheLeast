@@ -12,7 +12,9 @@ export default function Resources() {
   // Intersection observers for fade-in animations
   const heroSection = useIntersectionObserver({ threshold: 0.1 });
   const timelineSection = useIntersectionObserver({ threshold: 0.2 });
-  const resourcesSection = useIntersectionObserver({ threshold: 0.2 });
+  // Resource Directory is a very tall section; a 20% threshold may never be met
+  // within a typical viewport. Use a tiny threshold so it reveals once any part is visible.
+  const resourcesSection = useIntersectionObserver({ threshold: 0.01 });
 
   // Back to top button visibility
   const [showBackToTop, setShowBackToTop] = useState(false);
