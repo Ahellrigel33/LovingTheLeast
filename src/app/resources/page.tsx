@@ -106,8 +106,25 @@ export default function Resources() {
                 </div>
               </div>
 
-              {/* Age 3 or Kindergarten */}
+              {/* Age 2.5 */}
               <div className={`relative flex items-start gap-6 fade-in fade-in-delay-100 ${timelineSection.isVisible ? 'visible' : ''}`}>
+                <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-orange-400 to-pink-400 rounded-full flex items-center justify-center text-white font-bold text-sm z-10">
+                  <FileText className="w-4 h-4" />
+                </div>
+                <div className="bg-white rounded-xl p-6 shadow-lg flex-grow">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="bg-gradient-to-r from-orange-100 to-pink-100 text-orange-600 px-3 py-1 rounded-full text-sm font-semibold">Age 2.5</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-800 mb-2">PUNS List</h3>
+                  <p className="text-slate-600 text-sm sm:text-base">
+                    When your child is around two-and-a-half years old, it is important to have them placed on the PUNS list.
+                    The PUNS list allows families to have access to various services.
+                  </p>
+                </div>
+              </div>
+
+              {/* Age 3 or Kindergarten */}
+              <div className={`relative flex items-start gap-6 fade-in fade-in-delay-200 ${timelineSection.isVisible ? 'visible' : ''}`}>
                 <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-orange-400 to-pink-400 rounded-full flex items-center justify-center text-white font-bold text-sm z-10">
                   <GraduationCap className="w-4 h-4" />
                 </div>
@@ -124,7 +141,7 @@ export default function Resources() {
               </div>
 
               {/* Kindergarten and beyond */}
-              <div className={`relative flex items-start gap-6 fade-in fade-in-delay-200 ${timelineSection.isVisible ? 'visible' : ''}`}>
+              <div className={`relative flex items-start gap-6 fade-in fade-in-delay-300 ${timelineSection.isVisible ? 'visible' : ''}`}>
                 <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-orange-400 to-pink-400 rounded-full flex items-center justify-center text-white font-bold text-sm z-10">
                   <BookOpen className="w-4 h-4" />
                 </div>
@@ -135,23 +152,6 @@ export default function Resources() {
                   <h3 className="text-lg font-bold text-slate-800 mb-2">Special Education</h3>
                   <p className="text-slate-600 text-sm sm:text-base">
                     According to the United States Department of Education, every child, regardless of the nature and severity of disabilities, is entitled to a Free Appropriate Public Education (FAPE). Section 504 and Title II require public schools to provide appropriate education and modifications, aids and related services free of charge to students with disabilities and their parents or guardians. Education and services are provided through your local school district. Contact your local school district or ISBE.
-                  </p>
-                </div>
-              </div>
-
-              {/* Age 7 */}
-              <div className={`relative flex items-start gap-6 fade-in fade-in-delay-300 ${timelineSection.isVisible ? 'visible' : ''}`}>
-                <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-orange-400 to-pink-400 rounded-full flex items-center justify-center text-white font-bold text-sm z-10">
-                  <FileText className="w-4 h-4" />
-                </div>
-                <div className="bg-white rounded-xl p-6 shadow-lg flex-grow">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="bg-gradient-to-r from-orange-100 to-pink-100 text-orange-600 px-3 py-1 rounded-full text-sm font-semibold">Age 7</span>
-                  </div>
-                  <h3 className="text-lg font-bold text-slate-800 mb-2">PUNS List</h3>
-                  <p className="text-slate-600 text-sm sm:text-base">
-                    When your child turns seven years old, it is important to have them placed on the PUNS list.
-                    The PUNS list allows families to have access to various services as your child grows and transitions out of the school system.
                   </p>
                 </div>
               </div>
