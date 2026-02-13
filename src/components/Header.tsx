@@ -106,7 +106,7 @@ export default function Header({ isStudyGuide = false }: HeaderProps) {
 
       {/* Mobile Navigation */}
       <div
-        className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${isMobileMenuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+        className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${isMobileMenuOpen ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
           }`}
       >
         <nav className="px-6 pb-4 space-y-2">
