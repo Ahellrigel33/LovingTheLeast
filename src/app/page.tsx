@@ -1,12 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BookSummaryModal from "@/components/BookSummaryModal";
-import { Heart, BookOpen, Sparkles, ChevronUp, ExternalLink } from "lucide-react";
+import { Heart, BookOpen, Sparkles, ChevronUp } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function Home() {

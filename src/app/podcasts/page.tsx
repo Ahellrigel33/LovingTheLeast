@@ -60,7 +60,7 @@ export default function PodcastsPage() {
         if (isMounted) {
           setPodcasts(Array.isArray(data.podcasts) ? data.podcasts : []);
         }
-      } catch (err) {
+      } catch {
         if (isMounted) {
           setError("We couldn’t load the podcast list right now. Please try again soon.");
         }

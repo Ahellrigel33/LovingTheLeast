@@ -104,10 +104,17 @@ export async function GET() {
       : podcastsWithTimestamp;
 
     return NextResponse.json(
-      { podcasts: sortedPodcasts.map(({ timestamp, ...entry }) => entry) },
+      {
+        podcasts: sortedPodcasts.map((entry) => ({
+          date: entry.date,
+          name: entry.name,
+          host: entry.host,
+          link: entry.link,
+        })),
+      },
       { headers: { "Cache-Control": "no-store" } }
     );
-  } catch (error) {
+  } catch {
     return NextResponse.json({ podcasts: [], error: "Unable to load podcasts." }, { status: 500 });
   }
 }
