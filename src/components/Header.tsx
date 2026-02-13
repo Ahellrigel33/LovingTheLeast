@@ -62,19 +62,18 @@ export default function Header({ isStudyGuide = false }: HeaderProps) {
                   Resources
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full" style={{ backgroundColor: 'var(--gold)' }}></span>
                 </Link>
+                <Link href="/podcasts" className="text-charcoal hover:text-sky-blue-dark font-medium transition-all duration-300 relative group">
+                  Podcasts
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full" style={{ backgroundColor: 'var(--gold)' }}></span>
+                </Link>
                 <Link href="/contact" className="text-charcoal hover:text-sky-blue-dark font-medium transition-all duration-300 relative group">
                   Contact
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full" style={{ backgroundColor: 'var(--gold)' }}></span>
                 </Link>
-                <div className="relative group">
-                  <button
-                    className="text-charcoal hover:text-sky-blue-dark font-medium transition-all duration-300 relative group flex items-center gap-2 opacity-50 cursor-not-allowed"
-                    disabled
-                  >
-                    Study Guide
-                    <span className="badge-gradient text-white text-xs px-2 py-1 rounded-full font-bold">Coming Soon</span>
-                  </button>
-                </div>
+                <Link href="/study-guide" className="text-charcoal hover:text-sky-blue-dark font-medium transition-all duration-300 relative group">
+                  Study Guide
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full" style={{ backgroundColor: 'var(--gold)' }}></span>
+                </Link>
                 <a href="https://a.co/d/jldTYKX" target="_blank" rel="noopener noreferrer" className="btn-cta text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2">
                   <BookOpen className="w-4 h-4" />
                   Order Book
@@ -122,13 +121,15 @@ export default function Header({ isStudyGuide = false }: HeaderProps) {
               <Link href="/resources" onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-left py-2 px-4 text-charcoal hover:text-sky-blue-dark hover:bg-cream-light/50 rounded-lg transition-all duration-200">
                 Resources
               </Link>
+              <Link href="/podcasts" onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-left py-2 px-4 text-charcoal hover:text-sky-blue-dark hover:bg-cream-light/50 rounded-lg transition-all duration-200">
+                Podcasts
+              </Link>
               <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-left py-2 px-4 text-charcoal hover:text-sky-blue-dark hover:bg-cream-light/50 rounded-lg transition-all duration-200">
                 Contact
               </Link>
-              <div className="py-2 px-4 text-charcoal rounded-lg flex items-center justify-between opacity-50">
-                <span>Study Guide</span>
-                <span className="badge-gradient text-white text-xs px-2 py-1 rounded-full font-bold">Coming Soon</span>
-              </div>
+              <Link href="/study-guide" onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-left py-2 px-4 text-charcoal hover:text-sky-blue-dark hover:bg-cream-light/50 rounded-lg transition-all duration-200">
+                Study Guide
+              </Link>
               <a href="https://a.co/d/jldTYKX" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="w-full btn-cta text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 mt-3">
                 <BookOpen className="w-4 h-4" />
                 Order Book
