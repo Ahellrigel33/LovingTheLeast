@@ -63,14 +63,15 @@ export default function Home() {
               </div>
               <div className={`space-y-4 fade-in fade-in-delay-200 ${heroSection.isVisible ? 'visible' : ''} text-center lg:text-left`}>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <button
-                    className="btn-secondary-new font-semibold py-3 px-6 sm:px-8 rounded-lg text-base sm:text-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 inline-flex items-center gap-2 w-full sm:w-auto justify-center opacity-60 cursor-not-allowed"
-                    disabled
+                  <a
+                    href="https://a.co/d/01ZCZ06J"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary-new font-semibold py-3 px-6 sm:px-8 rounded-lg text-base sm:text-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 inline-flex items-center gap-2 w-full sm:w-auto justify-center"
                   >
                     <BookOpen className="w-4 h-4 sm:w-5 sm:h-5" />
                     Read Our Story
-                    <span className="badge-gradient text-white text-xs px-2 py-1 rounded-full font-bold ml-1">Coming Soon</span>
-                  </button>
+                  </a>
                 </div>
                 <p className="text-xs sm:text-sm text-charcoal-light italic handwritten">A deeply moving memoir</p>
               </div>
@@ -166,15 +167,20 @@ export default function Home() {
                     <h3 className="font-bold text-xl mb-3 text-charcoal-dark">Only Jesus Knows</h3>
                     <div className="mb-4">
                       <span className="bg-gold/20 text-gold-dark text-sm font-semibold px-3 py-1 rounded-full">
-                        Coming Soon
+                        Available Now
                       </span>
                     </div>
                     <blockquote className="text-sm italic text-charcoal-light mb-6 border-l-2 border-gold pl-4">
                       &quot;Throughout our years with Moise, we were left with questions that had no answers. My response was always the same: &apos;Only Jesus knows.&apos;&quot;
                     </blockquote>
-                    <div className="bg-gray-100 text-gray-500 font-semibold py-3 px-6 rounded-lg cursor-not-allowed w-full sm:w-auto">
-                      Coming Soon
-                    </div>
+                    <a
+                      href="https://a.co/d/01ZCZ06J"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-cta text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto inline-flex items-center justify-center"
+                    >
+                      Read Our Story
+                    </a>
                   </div>
                 </div>
               </div>

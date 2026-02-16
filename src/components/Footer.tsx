@@ -40,11 +40,15 @@ export default function Footer() {
               <h4 className="font-bold text-charcoal-dark mb-3 sm:mb-4 text-sm sm:text-base">My Books</h4>
               <ul className="space-y-2">
                 <li>
-                  <div className="text-charcoal text-xs sm:text-sm flex items-center justify-center md:justify-start gap-2 opacity-60">
+                  <a
+                    href="https://a.co/d/01ZCZ06J"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-charcoal hover:text-sky-blue-dark text-xs sm:text-sm transition-colors flex items-center justify-center md:justify-start gap-2"
+                  >
                     <BookOpen className="w-3 h-3 sm:w-4 sm:h-4" />
                     Only Jesus Knows
-                    <span className="badge-gradient text-white text-xs px-2 py-1 rounded-full font-bold ml-1">Coming Soon</span>
-                  </div>
+                  </a>
                 </li>
                 <li>
                   <a href="https://a.co/d/jldTYKX" target="_blank" rel="noopener noreferrer" className="text-charcoal hover:text-sky-blue-dark text-xs sm:text-sm transition-colors flex items-center justify-center md:justify-start gap-2">

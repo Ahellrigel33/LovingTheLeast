@@ -74,7 +74,7 @@ export default function Header({ isStudyGuide = false }: HeaderProps) {
                   Study Guide
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full" style={{ backgroundColor: 'var(--gold)' }}></span>
                 </Link>
-                <a href="https://a.co/d/jldTYKX" target="_blank" rel="noopener noreferrer" className="btn-cta text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2">
+                <a href="https://a.co/d/01ZCZ06J" target="_blank" rel="noopener noreferrer" className="btn-cta text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center gap-2">
                   <BookOpen className="w-4 h-4" />
                   Order Book
                 </a>
@@ -130,7 +130,7 @@ export default function Header({ isStudyGuide = false }: HeaderProps) {
               <Link href="/study-guide" onClick={() => setIsMobileMenuOpen(false)} className="block w-full text-left py-2 px-4 text-charcoal hover:text-sky-blue-dark hover:bg-cream-light/50 rounded-lg transition-all duration-200">
                 Study Guide
               </Link>
-              <a href="https://a.co/d/jldTYKX" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="w-full btn-cta text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 mt-3">
+              <a href="https://a.co/d/01ZCZ06J" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="w-full btn-cta text-white px-4 py-2 rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 mt-3">
                 <BookOpen className="w-4 h-4" />
                 Order Book
               </a>
