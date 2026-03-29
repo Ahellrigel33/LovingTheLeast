@@ -8,6 +8,7 @@ type PodcastEntry = {
   name: string;
   host: string;
   link: string;
+  importance: number;
 };
 
 const parseCsvLine = (line: string) => {
@@ -75,6 +76,7 @@ export async function GET() {
     const nameIndex = header.indexOf("name");
     const hostIndex = header.indexOf("host");
     const linkIndex = header.indexOf("link");
+    const importanceIndex = header.indexOf("importance");
 
     const resolvedDateIndex = dateIndex === -1 ? 0 : dateIndex;
     const resolvedLinkIndex = linkIndex === -1 ? 1 : linkIndex;
@@ -87,6 +89,7 @@ export async function GET() {
         name: row[resolvedNameIndex]?.trim() ?? "",
         host: row[resolvedHostIndex]?.trim() ?? "",
         link: row[resolvedLinkIndex]?.trim() ?? "",
+        importance: importanceIndex !== -1 ? parseInt(row[importanceIndex]?.trim() ?? "0", 10) || 0 : 0,
       }))
       .filter((entry) => (
         entry.date.length > 0 || entry.name.length > 0 || entry.host.length > 0 || entry.link.length > 0
@@ -97,11 +100,11 @@ export async function GET() {
       timestamp: parseDate(entry.date),
     }));
 
-    const hasSortableDates = podcastsWithTimestamp.some((entry) => entry.timestamp !== null);
-
-    const sortedPodcasts = hasSortableDates
-      ? [...podcastsWithTimestamp].sort((a, b) => (b.timestamp ?? 0) - (a.timestamp ?? 0))
-      : podcastsWithTimestamp;
+    const sortedPodcasts = [...podcastsWithTimestamp].sort((a, b) => {
+      const importanceDiff = b.importance - a.importance;
+      if (importanceDiff !== 0) return importanceDiff;
+      return (b.timestamp ?? 0) - (a.timestamp ?? 0);
+    });
 
     return NextResponse.json(
       {
